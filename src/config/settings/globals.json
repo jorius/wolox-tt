@@ -20,7 +20,7 @@
   },
   "serviceMocker": {
     "delayResponse": 300,
-    "isEnabled": true,
+    "isEnabled": false,
     "loginEmail": "admin@wolox.com.ar",
     "loginPassword": "MTIz",
     "passwordRecoveryCode": "MTIzNDU2"
