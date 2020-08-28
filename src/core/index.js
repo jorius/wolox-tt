@@ -23,7 +23,7 @@ const getEnvironment = () => ({
 
 /**
  * @param {Object} store - The redux store.
- * @param {Object} globalUI - The global ui object.
+ * @param {Object} globalUI - The globalUI object.
  */
 const verifyAppVersion = (store, globalUI) => {
     if (store.getState().appVersion !== config.appVersion) {
@@ -38,7 +38,12 @@ const loadFonts = (environment) => {
     if (!environment.isUnitTest) {
         WebFontLoader.load({
             google: {
-                families: ['Roboto:300,400,500,700', 'Material Icons']
+                families: [
+                    'Fira Sans',
+                    'Material Icons',
+                    'Montserrat',
+                    'Roboto:300,400,500,700'
+                ]
             },
             custom: {
                 families: ['FontAwesome'],

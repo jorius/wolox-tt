@@ -61,15 +61,15 @@ const MasterPageContainer = ({
         routeValProp: currentUrl
     });
 
-    if (!userIsLoggedIn && currentUrl !== loginUrl) {
+    if (!userIsLoggedIn && route && route.permission) {
         return <Redirect to={loginUrl} />;
     }
 
     if (userIsLoggedIn && currentUrl === loginUrl) {
-        return <Redirect to="/" />;
+        return <Redirect to="/home" />;
     }
 
-    if (userIsLoggedIn && !route) {
+    if (!route) {
         return <Redirect to="/404" />;
     }
 
@@ -202,7 +202,7 @@ const mapStateToProps = ({
     toastNotificationMsg: toastNotification.msg,
     toastNotificationType: toastNotification.type,
     userEmail: user.account.email,
-    userIsLoggedIn: Boolean(user.account.permissions.length),
+    userIsLoggedIn: Boolean(user.account.authToken) && Boolean(user.account.permissions.length),
     userLanguageCode: user.languageCode,
     userName: user.account.name,
     userPermissions: user.account.permissions

@@ -6,18 +6,25 @@ import { LOGIN, REMEMBER_ME, UPDATE_LANGUAGE } from '../actions';
 import { config } from '../../config';
 
 /**
- * @returns {{email: string, name: string, permissions: string[]}}
+ * @returns {{
+ *   authToken: string,
+ *   email: string,
+ *   name: string,
+ *   permissions: string[]
+ * }}
  */
 const accountReducer = (
     state = config.initialState.user.account, action
 ) => {
     switch (action.type) {
         case LOGIN:
-            const { email, name, permissions } = action.payload;
+            const { token: authToken } = action.payload;
+
             return {
-                email,
-                name,
-                permissions
+                authToken,
+                email: 'admin@wolox.com.ar',
+                name: 'Admin',
+                permissions: ['MainMenu.Home']
             };
         default:
             return state;
@@ -31,8 +38,6 @@ const languageCodeReducer = (
     state = config.initialState.user.languageCode, action
 ) => {
     switch (action.type) {
-        case LOGIN:
-            return action.payload.languageCode;
         case UPDATE_LANGUAGE:
             return action.payload;
         default:

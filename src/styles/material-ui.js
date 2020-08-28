@@ -33,5 +33,12 @@ export const theme = createMuiTheme({
             default: color.background,
             paper: color.surface
         }
+    },
+    typography: {
+        fontFamily: [
+            '"Montserrat"',
+            '"Fira Sans"',
+            'sans-serif'
+        ].join(',')
     }
 });

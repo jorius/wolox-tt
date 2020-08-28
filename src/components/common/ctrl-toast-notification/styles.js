@@ -10,6 +10,7 @@ export default (theme) => ({
     toastNoficiation: {
     },
     error: {
+        color: theme.palette.common.white,
         backgroundColor: theme.palette.error.dark
     },
     info: {

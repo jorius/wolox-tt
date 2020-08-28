@@ -20,14 +20,14 @@ export const rememberMe = (rememberMe) =>
     });
 
 /**
- * @param {string} user
+ * @param {string} email
  * @param {string} password
  */
-export const login = ({ user, password }) =>
+export const login = ({ email, password }) =>
     (dispatch) => axios
         .post(config.services.user.login, {
             params: {
-                user,
+                email,
                 password
             }
         })

@@ -44,11 +44,11 @@ class LoginPage extends PureComponent {
     handleOnLogIn() {
         if (this.isFormValid) {
             const { userProps } = this.props;
-            const { user, password } = this.state;
+            const { email, password } = this.state;
 
             userProps
                 .onLogin({
-                    user: user.value,
+                    email: email.value,
                     password: password.value
                 }).then(() => {
                     globalUI.navigateToDefaultUrl();
@@ -64,7 +64,7 @@ class LoginPage extends PureComponent {
             userProps: { rememberMe }
         } = this.props;
 
-        const { password, showErrors, user } = this.state;
+        const { email, password, showErrors } = this.state;
 
         return (
             <div
@@ -72,6 +72,7 @@ class LoginPage extends PureComponent {
                 id="login-page"
             >
                 <CtrlLoginForm
+                    emailValue={email.value}
                     id="login-page-form"
                     onFieldChange={this.handleFieldOnChange}
                     onLogin={this.handleOnLogIn}
@@ -79,7 +80,6 @@ class LoginPage extends PureComponent {
                     passwordValue={password.value}
                     rememberMeValue={rememberMe}
                     showErrors={showErrors}
-                    userValue={user.value}
                 />
             </div>
         );

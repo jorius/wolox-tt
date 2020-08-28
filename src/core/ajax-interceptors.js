@@ -49,10 +49,10 @@ const addRequestInterceptors = (environment, globalUI, store) => {
         (request) => {
             globalUI.hideToastNotification();
 
-            const { account: { accessToken } } = store.getState().user;
+            const { account: { authToken } } = store.getState().user;
 
-            if (accessToken) {
-                request.headers.Authorization = `Bearer ${accessToken}`;
+            if (authToken) {
+                request.headers.Authorization = `Bearer ${authToken}`;
             }
 
             if (shouldDisplayLoadingPage(environment)) {
@@ -70,12 +70,10 @@ const addResponseInterceptors = (environment, globalUI) => {
         (response) => {
             globalUI.hideLoadingPage();
 
-            const responseSuccess = response.data.success;
-            const responseError = response.data.error;
-            const responseData = response.data.result || response.data.data;
-            const responseMessage = responseError
-                ? response.data.error.message
-                : null;
+            const responseSuccess = response.data.success || response.data;
+            const responseError = !response.data.success || !response.data;
+            const responseData = response.data.data || { ...response.data };
+            const responseMessage = response.data.message;
             const responseMessageType = responseSuccess && !responseError
                 ? constants.notificationType.SUCCESS
                 : constants.notificationType.ERROR;
