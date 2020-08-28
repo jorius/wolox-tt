@@ -2,13 +2,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { withStyles, MuiThemeProvider } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 // @scripts
 import CtrlCommonControls from './common-controls';
 import CtrlRestrictedControls from './restricted-controls';
 import CtrlRoutes from './routes';
-import { theme } from '../../styles/material-ui';
 
 // @styles
 import styles from './styles';
@@ -23,27 +22,25 @@ const MasterPage = ({
     toastNotificationProps,
     userProps
 }) => (
-    <MuiThemeProvider theme={theme}>
-        <div id="master-page" className={classes.masterPage}>
-            <Helmet>
-                <title>{title}</title>
-            </Helmet>
-            <CtrlRoutes
-                mainMenuIsExpanded={mainMenu.isExpanded}
-                userProps={userProps}
-            />
-            <CtrlCommonControls
-                modalDialogProps={modalDialogProps}
-                loadingPageProps={loadingPageProps}
-                toastNotificationProps={toastNotificationProps}
-            />
-            <CtrlRestrictedControls
-                currentUrl={currentUrl}
-                mainMenu={mainMenu}
-                userProps={userProps}
-            />
-        </div>
-    </MuiThemeProvider>
+    <div id="master-page" className={classes.masterPage}>
+        <Helmet>
+            <title>{title}</title>
+        </Helmet>
+        <CtrlRoutes
+            mainMenuIsExpanded={mainMenu.isExpanded}
+            userProps={userProps}
+        />
+        <CtrlCommonControls
+            modalDialogProps={modalDialogProps}
+            loadingPageProps={loadingPageProps}
+            toastNotificationProps={toastNotificationProps}
+        />
+        <CtrlRestrictedControls
+            currentUrl={currentUrl}
+            mainMenu={mainMenu}
+            userProps={userProps}
+        />
+    </div>
 );
 
 MasterPage.propTypes = {
