@@ -1,0 +1,11 @@
+{
+  "userLoginSvcResponse": {
+    "email": "admin@wolox.com.ar",
+    "languageCode": "es",
+    "name": "Admin",
+    "permissions": [
+      "MainMenu.Home",
+      "MainMenu.Settings"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "icon": "home",
+    "isDefault": false,
+    "name": "home",
+    "subMenuItems": [
+        {
+          "icon": "home",
+          "isDefault": false,
+          "name": "home",
+          "subMenuItems": [
+            {
+              "icon": "home",
+              "isDefault": false,
+              "name": "home"
+            }
+          ]
+        }
+    ]
+  }
+]
