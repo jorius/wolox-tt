@@ -4,8 +4,8 @@
     "languageCode": "es",
     "name": "Admin",
     "permissions": [
-      "MainMenu.Home",
-      "MainMenu.Settings"
-    ]
+      "MainMenu.Home"
+    ],
+    "token": "qiowAS9ndnjLKSS32LaLAPlDKL2"
   }
 }
