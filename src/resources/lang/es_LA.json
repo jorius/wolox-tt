@@ -1,0 +1,59 @@
+{
+  "appName": "Wolox",
+  "homePage": {
+    "content": "Página principal"
+  },
+  "loginPage": {
+    "continue": "Continuar",
+    "formTitle": "Iniciar Sesión",
+    "invalidCredentials": "¡Usuario o clave inválida!",
+    "password": "Clave",
+    "recoverPassword": "¿Olvidó su clave?",
+    "remember": "Recordarme",
+    "userLabel": "Email",
+    "userPlaceholder": "nombre@email.com"
+  },
+  "masterData": {},
+  "menu": {
+    "companyProfile": "Perfil de la compañia",
+    "home": "Inicio",
+    "login": "Cerrar sesión",
+    "products": "Productos",
+    "settings": "Configuración"
+  },
+  "modalDialog": {
+    "cancel": "Cancelar",
+    "msg": "¿Seguro que desea realizar esta acción?",
+    "ok": "Aceptar",
+    "title": "Confirmación"
+  },
+  "notFoundPage": {
+      "content": "Error 404, página no encontrada."
+  },
+  "routes": {
+    "home": "Inicio"
+  },
+  "settingsPage": {
+    "language": "Lenguaje"
+  },
+  "topBar": {
+    "alerts": "Alertas",
+    "collapse": "Colapsar",
+    "expand": "Expandir",
+    "profile": "Mi perfil",
+    "search": "Buscar"
+  },
+  "validations": {
+    "date": "Fecha inválida",
+    "email": "Email inválido",
+    "maxValue": "Valor máximo: {0}",
+    "minCharacters": "Ingrese al menos {0} caracteres",
+    "minValue": "Valor mínimo: {0}",
+    "number": "Número inválido",
+    "phone": "Teléfono inválido",
+    "required": "Campo requerido",
+    "search": "Búsqueda inválida",
+    "verification": "La verificación no coincide",
+    "zip": "Código de área inválido"
+  }
+}

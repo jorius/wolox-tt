@@ -1,0 +1,20 @@
+{
+  "explorer.sortOrder": "type",
+  "files.associations": {
+    ".dockerignore": "properties",
+    ".stylelintrc": "json"
+  },
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/*.css": true,
+    "build": true,
+    "coverage": true,
+    "node_modules": true
+  },
+  "javascript.suggestionActions.enabled": false,
+  "search.exclude": {
+    "**/build": true,
+    "**/coverage": true,
+    "**/node_modules": true
+   }
+}
