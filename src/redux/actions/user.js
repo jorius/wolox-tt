@@ -48,14 +48,7 @@ export const logout = () =>
  * @param {string} languageCode - E.g: 'en', 'es'.
  */
 export const updateLanguage = (languageCode) =>
-    (dispatch) => axios
-        .post(config.services.user.updateLanguage, {
-            params: { languageCode }
-        })
-        .then((response) => {
-            dispatch({
-                type: UPDATE_LANGUAGE,
-                payload: response
-            });
-        })
-        .catch((error) => Promise.reject(error));
+    ({
+        type: UPDATE_LANGUAGE,
+        payload: languageCode
+    });

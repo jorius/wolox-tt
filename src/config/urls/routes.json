@@ -16,7 +16,7 @@
   {
     "container": "SettingsPageContainer",
     "name": "settings",
-    "permission": "MainMenu.Settings",
+    "permission": null,
     "requiresLogout": false,
     "url": "/settings"
   },
