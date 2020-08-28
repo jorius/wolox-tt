@@ -11,11 +11,10 @@ import {
 export const mockUserLoginSvc = (mockAdapter) => {
     const url = config.services.user.login;
     mockAdapter.onPost(url).reply((call) => {
-        const { user, password } = getMockParams(call);
+        const { email, password } = getMockParams(call);
         const { loginEmail, loginPassword } = config.settings.serviceMocker;
 
-        const success = (user === loginEmail)
-        && (password === decodeBase64String(loginPassword));
+        const success = (email === loginEmail) && (password === decodeBase64String(loginPassword));
 
         return createMockResponse({
             data: success ? config.mockData.userLoginSvcResponse : null,
