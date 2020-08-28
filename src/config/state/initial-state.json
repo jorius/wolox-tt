@@ -28,6 +28,7 @@
   },
   "user": {
     "account": {
+      "authToken": null,
       "email": null,
       "name": null,
       "permissions": []
