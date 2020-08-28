@@ -18,14 +18,14 @@ import styles from './styles';
 
 const CtrlLoginForm = ({
     classes,
+    emailValue,
     id,
     onFieldChange,
     onLogin,
     onRememberMe,
     passwordValue,
     rememberMeValue,
-    showErrors,
-    userValue
+    showErrors
 }) => (
     <form
         autoComplete="off"
@@ -44,16 +44,16 @@ const CtrlLoginForm = ({
             <CtrlTextField
                 autoFocus
                 icon="account_circle"
-                id={`${id}-user-input`}
+                id={`${id}-email-input`}
                 label={config.text.loginPage.userLabel}
-                name="user"
+                name="email"
                 onChange={onFieldChange}
                 onEnter={onLogin}
                 placeholder={config.text.loginPage.userPlaceholder}
                 required
                 showErrors={showErrors}
                 type="email"
-                value={userValue}
+                value={emailValue}
             />
             <CtrlTextField
                 id={`${id}-password-input`}
@@ -75,13 +75,6 @@ const CtrlLoginForm = ({
                         onChange={onRememberMe}
                         value={rememberMeValue}
                     />
-                    <a
-                        className={classes.gblLink}
-                        href="#recover-password"
-                        id={`${id}-recover-link`}
-                    >
-                        <span>{config.text.loginPage.recoverPassword}</span>
-                    </a>
                 </div>
                 <Button
                     className={classes.loginButton}
@@ -99,19 +92,19 @@ const CtrlLoginForm = ({
 
 CtrlLoginForm.propTypes = {
     classes: PropTypes.object.isRequired,
+    emailValue: PropTypes.string,
     id: PropTypes.string.isRequired,
     onFieldChange: PropTypes.func.isRequired,
     onLogin: PropTypes.func.isRequired,
     onRememberMe: PropTypes.func.isRequired,
     passwordValue: PropTypes.string,
     rememberMeValue: PropTypes.bool.isRequired,
-    showErrors: PropTypes.bool.isRequired,
-    userValue: PropTypes.string
+    showErrors: PropTypes.bool.isRequired
 };
 
 CtrlLoginForm.defaultProps = {
-    passwordValue: null,
-    userValue: null
+    emailValue: null,
+    passwordValue: null
 };
 
 export default withStyles(styles)(CtrlLoginForm);

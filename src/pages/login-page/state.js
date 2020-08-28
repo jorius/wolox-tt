@@ -1,10 +1,10 @@
 export const initialState = {
-    showErrors: false,
-    password: {
+    email: {
         isValid: false,
         value: null
     },
-    user: {
+    showErrors: false,
+    password: {
         isValid: false,
         value: null
     }
