@@ -6,8 +6,7 @@ import axios from 'axios';
 import { config } from '../../config';
 
 import {
-    mockUserLoginSvc,
-    mockUserUpdateLanguageSvc
+    mockUserLoginSvc
 } from './all-mocks';
 
 export const initializeServiceMocker = () => {
@@ -24,7 +23,6 @@ export const initializeServiceMocker = () => {
         replyWithMockData: () => {
             mockAdapter.reset();
             mockUserLoginSvc(mockAdapter);
-            mockUserUpdateLanguageSvc(mockAdapter);
         },
         replyWithNetworkError: () => {
             mockAdapter.reset();
