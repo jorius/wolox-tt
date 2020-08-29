@@ -1,6 +1,8 @@
 {
+  "tech": {
+    "collection": "{root}/techs"
+  },
   "user": {
-    "login": "{root}/login",
-    "updateLanguage": "{root}/api/user/updateLanguage"
+    "login": "{root}/login"
   }
 }

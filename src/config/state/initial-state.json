@@ -21,6 +21,10 @@
     "title": null,
     "width": null
   },
+  "techCollection": {
+    "items": [],
+    "totalCount": null
+  },
   "toastNotification": {
     "isVisible": false,
     "msg": null,
