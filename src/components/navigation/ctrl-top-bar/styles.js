@@ -24,7 +24,7 @@ export default (theme) => ({
         marginRight: 25
     },
     topBar: {
-        backgroundColor: theme.palette.common.white,
+        backgroundColor: theme.palette.common.background,
         width: `calc(100% - ${dimensions.MAIN_MENU_WIDTH}px)`
     },
     topBarPadding: {

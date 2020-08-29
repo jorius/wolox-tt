@@ -8,7 +8,7 @@ export default (theme) => ({
     mainMenu: {
     },
     menuPaper: {
-        backgroundColor: theme.palette.background.default,
+        backgroundColor: theme.palette.primary.main,
         transition: theme.transitions.create(['margin', 'width'], {
             duration: theme.transitions.duration.enteringScreen,
             easing: theme.transitions.easing.easeOut
@@ -33,12 +33,12 @@ export default (theme) => ({
         marginLeft: 5
     },
     menuIconSelected: {
-        height: 60,
+        height: 63,
         textDecoration: 'underline',
-        textDecorationColor: theme.palette.common.blue,
+        textDecorationColor: theme.palette.common.white,
         '&:hover': {
             textDecoration: 'underline',
-            textDecorationColor: theme.palette.common.blue
+            textDecorationColor: theme.palette.common.white
         }
     },
     menuIconUnselected: {

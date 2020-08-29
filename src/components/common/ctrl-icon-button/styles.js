@@ -15,5 +15,6 @@ export default (theme) => ({
         color: '#252733'
     },
     labelContent: {
+        color: theme.palette.common.white
     }
 });
