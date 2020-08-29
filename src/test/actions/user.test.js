@@ -25,7 +25,7 @@ test('rememberMe', () => {
 
 test('login (http request success)', () => {
     const credentials = {
-        user: config.settings.serviceMocker.loginEmail,
+        email: config.settings.serviceMocker.loginEmail,
         password: decodeBase64String(
             config.settings.serviceMocker.loginPassword
         )
@@ -67,11 +67,4 @@ test('updateLanguage (http request success)', () => {
     }];
 
     return global.testDispatch(actionCreator, expectedActions);
-});
-
-test('updateLanguage (http request fails)', () => {
-    const newLanguageCode = 'en';
-    const actionCreator = updateLanguage(newLanguageCode);
-    const expectedActions = [];
-    return global.testDispatchWithNetworkError(actionCreator, expectedActions);
 });

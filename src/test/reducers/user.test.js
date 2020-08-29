@@ -9,17 +9,16 @@ test('userReducer: LOGIN', () => {
         payload: config.mockData.userLoginSvcResponse
     };
     const newState = userReducer(config.initialState.user, action);
-    const {
-        email, languageCode, name, permissions
-    } = action.payload;
+    const { token: authToken } = action.payload;
+
     const expectedState = {
         ...config.initialState.user,
         account: {
-            email,
-            name,
-            permissions
-        },
-        languageCode
+            authToken,
+            email: 'admin@wolox.com.ar',
+            name: 'Admin',
+            permissions: ['MainMenu.Home']
+        }
     };
     expect(newState).toEqual(expectedState);
 });
