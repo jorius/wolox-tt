@@ -20,10 +20,11 @@ import {
 } from '../redux';
 
 /**
+ * @param {Object} environment - Environment settings.
  * @param {Store} store - The redux store.
  * @returns {Object}
  */
-export const initializeGlobalUI = (store) => {
+export const initializeGlobalUI = (environment, store) => {
     const globalUI = bindActionCreators({
         showLoadingPage,
         showToastNotification,
@@ -145,6 +146,10 @@ export const initializeGlobalUI = (store) => {
             navigateToUrl(`${getBaseUrl()}/#${loginUrl}`);
         }
     };
+
+    if (!environment.isUnitTest) {
+        globalUI.getImage = require.context('../assets/images', true);
+    }
 
     return globalUI;
 };

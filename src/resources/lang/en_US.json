@@ -3,15 +3,19 @@
     "homePage": {
       "content": "Home Page"
     },
+    "landingPage": {
+      "content": "Landing"
+    },
     "loginPage": {
       "continue": "Continue",
       "formTitle": "Log in",
-      "invalidCredentials": "Invalid user name or password!",
+      "invalidCredentials": "Invalid user name or password",
+      "keepSessionAlive": "Keep session alive",
       "password": "Password",
       "recoverPassword": "Forgotten password?",
-      "remember": "Remember me",
       "userLabel": "Email",
-      "userPlaceholder": "name@email.com"
+      "userPlaceholder": "name@email.com",
+      "welcomeToWolox": "Welcome to Wolox"
     },
     "masterData": {},
     "menu": {

@@ -11,20 +11,27 @@ import { updateLanguage } from '../redux';
 
 const SettingsPageContainer = ({
     languageCode,
-    languageOnChange
-}) => (
-    <SettingsPage
-        languageProps={{
-            code: languageCode,
-            list: config.masterData.languages,
-            onChange: languageOnChange
-        }}
-    />
-);
+    onChangeLanguage
+}) => {
+    const handleOnChangeLanguage = (langCode) => {
+        config.applyLanguage(langCode);
+        onChangeLanguage(langCode);
+    };
+
+    return (
+        <SettingsPage
+            languageProps={{
+                code: languageCode,
+                list: config.masterData.languages,
+                onChange: handleOnChangeLanguage
+            }}
+        />
+    );
+};
 
 SettingsPageContainer.propTypes = {
     languageCode: PropTypes.string.isRequired,
-    languageOnChange: PropTypes.func.isRequired
+    onChangeLanguage: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ user }) => ({
@@ -32,7 +39,7 @@ const mapStateToProps = ({ user }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-    languageOnChange: updateLanguage
+    onChangeLanguage: updateLanguage
 }, dispatch);
 
 export default connect(
