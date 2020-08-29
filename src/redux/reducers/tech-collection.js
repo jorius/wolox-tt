@@ -6,7 +6,15 @@ import { GET_TECH_COLLECTION } from '../actions';
 import { config } from '../../config';
 
 /**
- * @returns {string[]}
+ * @returns {{
+ *   author: string,
+ *   language: string,
+ *   license: string,
+ *   logo: string,
+ *   tech: string,
+ *   type: string,
+ *   year: string
+ * }[]}
  */
 export const itemsReducer = (
     state = config.initialState.techCollection.items, action
@@ -20,7 +28,7 @@ export const itemsReducer = (
 };
 
 /**
- * @returns {boolean}
+ * @returns {number}
  */
 const totalCountReducer = (
     state = config.initialState.techCollection.totalCount, action
