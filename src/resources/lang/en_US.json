@@ -1,63 +1,69 @@
 {
-    "appName": "Wolox",
-    "homePage": {
-      "content": "Home Page"
-    },
-    "landingPage": {
-      "content": "Landing"
-    },
-    "loginPage": {
-      "continue": "Continue",
-      "formTitle": "Log in",
-      "invalidCredentials": "Invalid user name or password",
-      "keepSessionAlive": "Keep session alive",
-      "password": "Password",
-      "recoverPassword": "Forgotten password?",
-      "userLabel": "Email",
-      "userPlaceholder": "name@email.com",
-      "welcomeToWolox": "Welcome to Wolox"
-    },
-    "masterData": {},
-    "menu": {
-      "companyProfile": "Company profile",
-      "home": "Home",
-      "login": "Logout",
-      "products": "Products",
-      "settings": "Settings"
-    },
-    "modalDialog": {
-      "cancel": "Cancel",
-      "msg": "Are you sure you want to perform this action?",
-      "ok": "Ok",
-      "title": "Confirm"
-    },
-    "notFoundPage": {
-      "content": "Error 404, page not found."
-    },
-    "routes": {
-      "home": "Home"
-    },
-    "settingsPage": {
-      "language": "Language"
-    },
-    "topBar": {
-      "alerts": "Alerts",
-      "collapse": "Collapse",
-      "expand": "Expand",
-      "profile": "My profile",
-      "search": "Search"
-    },
-    "validations": {
-      "date": "Invalid date",
-      "email": "Invalid email",
-      "maxValue": "Max value: {0}",
-      "minCharacters": "Expected at least {0} characters",
-      "minValue": "Min value: {0}",
-      "number": "Invalid number",
-      "phone": "Invalid phone",
-      "required": "Required field",
-      "search": "Invalid search",
-      "verification": "Verification doesn't match",
-      "zip": "Invalid zip code"
-    }
+  "appName": "Wolox",
+  "homePage": {
+    "content": "Home Page"
+  },
+  "landingPage": {
+    "benefits": "Benefits",
+    "content": "Landing",
+    "requirements": "Requirements",
+    "start": "Inicio",
+    "technicalInterview": "Technical Interview at",
+    "technologies": "Technologies",
+    "welcomeToYour": "Welcome to your"
+  },
+  "loginPage": {
+    "continue": "Continue",
+    "formTitle": "Login",
+    "invalidCredentials": "Invalid user name or password",
+    "keepSessionAlive": "Keep session alive",
+    "password": "Password",
+    "recoverPassword": "Forgotten password?",
+    "userLabel": "Email",
+    "userPlaceholder": "name@email.com",
+    "welcomeToWolox": "Welcome to Wolox"
+  },
+  "masterData": {},
+  "menu": {
+    "companyProfile": "Company profile",
+    "home": "Home",
+    "login": "Logout",
+    "products": "Products",
+    "settings": "Settings"
+  },
+  "modalDialog": {
+    "cancel": "Cancel",
+    "msg": "Are you sure you want to perform this action?",
+    "ok": "Ok",
+    "title": "Confirm"
+  },
+  "notFoundPage": {
+    "content": "Error 404, page not found."
+  },
+  "routes": {
+    "home": "Home"
+  },
+  "settingsPage": {
+    "language": "Language"
+  },
+  "topBar": {
+    "alerts": "Alerts",
+    "collapse": "Collapse",
+    "expand": "Expand",
+    "profile": "My profile",
+    "search": "Search"
+  },
+  "validations": {
+    "date": "Invalid date",
+    "email": "Invalid email",
+    "maxValue": "Max value: {0}",
+    "minCharacters": "Expected at least {0} characters",
+    "minValue": "Min value: {0}",
+    "number": "Invalid number",
+    "phone": "Invalid phone",
+    "required": "Required field",
+    "search": "Invalid search",
+    "verification": "Verification doesn't match",
+    "zip": "Invalid zip code"
+  }
 }

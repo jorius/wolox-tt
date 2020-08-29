@@ -4,7 +4,13 @@
     "content": "Página principal"
   },
   "landingPage": {
-    "content": "Inicio"
+    "benefits": "Benefits",
+    "content": "Inicio",
+    "requirements": "Requerimientos",
+    "start": "Inicio",
+    "technicalInterview": "Entrevista Técnica en",
+    "technologies": "Tecnologías",
+    "welcomeToYour": "Bienvenido a su"
   },
   "loginPage": {
     "continue": "Continuar",
