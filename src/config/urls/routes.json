@@ -7,6 +7,13 @@
     "url": "/home"
   },
   {
+    "container": "LandingPageContainer",
+    "name": "landing",
+    "permission": null,
+    "requiresLogout": true,
+    "url": "/"
+  },
+  {
     "container": "LoginPageContainer",
     "name": "login",
     "permission": null,
