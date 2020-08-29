@@ -1,10 +1,9 @@
 // @packages
-import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Toolbar from '@material-ui/core/Toolbar';
+import Grid from '@material-ui/core/Grid';
+import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -27,67 +26,90 @@ const CtrlLoginForm = ({
     rememberMeValue,
     showErrors
 }) => (
-    <form
-        autoComplete="off"
-        className={classes.form}
-        id={id}
-        noValidate
-    >
-        <Paper className={classes.formPaper}>
-            <AppBar classes={{ root: classes.loginAppBar }}>
-                <Toolbar>
-                    <Typography variant="h6" color="inherit">
-                        {config.text.loginPage.formTitle}
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-            <CtrlTextField
-                autoFocus
-                icon="account_circle"
-                id={`${id}-email-input`}
-                label={config.text.loginPage.userLabel}
-                name="email"
-                onChange={onFieldChange}
-                onEnter={onLogin}
-                placeholder={config.text.loginPage.userPlaceholder}
-                required
-                showErrors={showErrors}
-                type="email"
-                value={emailValue}
-            />
-            <CtrlTextField
-                id={`${id}-password-input`}
-                label={config.text.loginPage.password}
-                name="password"
-                onChange={onFieldChange}
-                onEnter={onLogin}
-                required
-                showErrors={showErrors}
-                type="password"
-                value={passwordValue}
-            />
-            <div className={classes.formButtons}>
-                <div>
-                    <CtrlCheckField
-                        id={`${id}-remember-check`}
-                        label={config.text.loginPage.remember}
-                        name="remember"
-                        onChange={onRememberMe}
-                        value={rememberMeValue}
-                    />
-                </div>
-                <Button
-                    className={classes.loginButton}
-                    id={`${id}-continue-button`}
-                    onClick={onLogin}
-                    value={config.text.loginPage.continue}
-                    variant="contained"
+    <div id={id}>
+        <Grid container direction="row">
+            <Hidden mdDown>
+                <Grid className={classes.loginBackground} item lg={6} sm={6} md={6} xs={12} />
+            </Hidden>
+            <Grid className={classes.formContainer} item lg={6} sm={6} md={12} xs={12}>
+                <form
+                    autoComplete="off"
+                    className={classes.form}
+                    noValidate
                 >
-                    {config.text.loginPage.continue}
-                </Button>
-            </div>
-        </Paper>
-    </form>
+                <Grid justify="center" container>
+                    <Grid item>
+                        <Typography
+                            className={classes.formTitle}
+                            variant="h5"
+                        >
+                            {config.text.loginPage.welcomeToWolox}
+                        </Typography>
+                    </Grid>
+                </Grid>
+                <Grid container>
+                    <Grid item lg={12} sm={12} md={12} xs={12}>
+                        <CtrlTextField
+                            autoFocus
+                            icon="account_circle"
+                            id={`${id}-email-input`}
+                            label={config.text.loginPage.userLabel}
+                            name="email"
+                            onChange={onFieldChange}
+                            onEnter={onLogin}
+                            placeholder={config.text.loginPage.userPlaceholder}
+                            required
+                            showErrors={showErrors}
+                            type="email"
+                            value={emailValue}
+                        />
+                    </Grid>
+                </Grid>
+                <Grid container>
+                    <Grid item lg={12} sm={12} md={12} xs={12}>
+                        <CtrlTextField
+                            id={`${id}-password-input`}
+                            label={config.text.loginPage.password}
+                            minLength={6}
+                            name="password"
+                            onChange={onFieldChange}
+                            onEnter={onLogin}
+                            required
+                            showErrors={showErrors}
+                            type="password"
+                            value={passwordValue}
+                        />
+                    </Grid>
+                </Grid>
+                    <Grid container>
+                        <Grid item>
+                            <CtrlCheckField
+                                id={`${id}-remember-check`}
+                                label={config.text.loginPage.keepSessionAlive}
+                                name="remember"
+                                onChange={onRememberMe}
+                                value={rememberMeValue}
+                            />
+                        </Grid>
+                    </Grid>
+                    <Grid container justify="center">
+                        <Grid item>
+                            <Button
+                                className={classes.loginButton}
+                                color="primary"
+                                id={`${id}-continue-button`}
+                                onClick={onLogin}
+                                value={config.text.loginPage.continue}
+                                variant="contained"
+                            >
+                                {config.text.loginPage.formTitle}
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </form>
+            </Grid>
+        </Grid>
+    </div>
 );
 
 CtrlLoginForm.propTypes = {

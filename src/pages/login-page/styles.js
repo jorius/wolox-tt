@@ -1,14 +1,18 @@
+// @scripts
+import { globalUI } from '../../core';
+
+// @styles
 import globals, { dimensions } from '../../styles/globals';
 
 export default (theme) => ({
     ...globals(theme),
-    loginAppBar: {
-        backgroundColor: theme.palette.background.default,
-        color: theme.palette.common.white
+    loginBackground: {
+        background: `url("${globalUI.getImage('./bg.png')}") no-repeat 95% 95%`,
+        height: '100vh',
+        padding: 25
     },
     loginButton: {
-        backgroundColor: theme.palette.background.default,
-        color: theme.palette.common.white,
+        marginTop: 50,
         '&:hover': {
             backgroundColor: '#3a3e54'
         }
@@ -19,21 +23,19 @@ export default (theme) => ({
         marginLeft: `-${dimensions.MAIN_MENU_WIDTH + 15}px`
     },
     form: {
-        left: '50%',
-        maxWidth: 400,
+        maxWidth: 500,
+        minWidth: 300,
         position: 'relative',
         top: '50%',
-        transform: 'translate(-50%, -50%)'
+        transform: 'translate(50%, -50%)'
     },
-    formPaper: {
-        padding: 20,
-        paddingTop: 90
+    formContainer: {
+        background: `url("${globalUI.getImage('./bg2.png')}") repeat center`
+    },
+    formItem: {
+        marginBottom: 20
     },
     formTitle: {
-        marginBottom: 20,
-        textAlign: 'center'
-    },
-    formButtons: {
-        textAlign: 'right'
+        marginBottom: 25
     }
 });
