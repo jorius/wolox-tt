@@ -70,7 +70,7 @@ const initializeApp = () => {
 
     const environment = getEnvironment();
     const store = initializeReduxStore(environment);
-    const globalUI = initializeGlobalUI(store);
+    const globalUI = initializeGlobalUI(environment, store);
     const serviceMocker = initializeServiceMocker();
 
     addAjaxInterceptors({ environment, globalUI, store });
