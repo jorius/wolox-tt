@@ -4,9 +4,10 @@ import { combineReducers } from 'redux';
 // @scripts
 import { appVersionReducer } from './app-version';
 import { loadingPageReducer } from './loading-page';
-import { modalDialogReducer } from './modal-dialog';
-import { toastNotificationReducer } from './toast-notification';
 import { mainMenuReducer } from './main-menu';
+import { modalDialogReducer } from './modal-dialog';
+import { techCollectionReducer } from './tech-collection';
+import { toastNotificationReducer } from './toast-notification';
 import { userReducer } from './user';
 
 const appReducer = combineReducers({
@@ -14,6 +15,7 @@ const appReducer = combineReducers({
     loadingPage: loadingPageReducer,
     mainMenu: mainMenuReducer,
     modalDialog: modalDialogReducer,
+    techCollection: techCollectionReducer,
     toastNotification: toastNotificationReducer,
     user: userReducer
 });

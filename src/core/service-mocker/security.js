@@ -24,13 +24,3 @@ export const mockUserLoginSvc = (mockAdapter) => {
         });
     });
 };
-
-export const mockUserUpdateLanguageSvc = (mockAdapter) => {
-    const url = config.services.user.updateLanguage;
-
-    mockAdapter.onPost(url).reply((call) => {
-        const { languageCode } = getMockParams(call);
-
-        return createMockResponse({ data: languageCode });
-    });
-};
