@@ -3,15 +3,19 @@
   "homePage": {
     "content": "Página principal"
   },
+  "landingPage": {
+    "content": "Inicio"
+  },
   "loginPage": {
     "continue": "Continuar",
-    "formTitle": "Iniciar Sesión",
-    "invalidCredentials": "¡Usuario o clave inválida!",
-    "password": "Clave",
-    "recoverPassword": "¿Olvidó su clave?",
-    "remember": "Recordarme",
-    "userLabel": "Email",
-    "userPlaceholder": "nombre@email.com"
+    "formTitle": "Iniciar sesión",
+    "invalidCredentials": "Usuario o contraseña inválida",
+    "keepSessionAlive": "Mantenerse conectado",
+    "password": "Contraseña",
+    "recoverPassword": "¿Olvidó su contraseña?",
+    "userLabel": "Correo elecrónico",
+    "userPlaceholder": "nombre@email.com",
+    "welcomeToWolox": "Bienvenido a Wolox"
   },
   "masterData": {},
   "menu": {
