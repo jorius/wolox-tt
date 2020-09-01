@@ -27,7 +27,7 @@ const CtrlRoutes = ({
         [classes.loggedInPage]: userProps.isLoggedIn
     });
 
-    let containerpaddingleft = dimensions.MAIN_MENU_WIDTH_COLLAPSED + 15;
+    let containerpaddingleft = 0;
 
     if (mainMenuIsExpanded && userProps.isLoggedIn) {
         containerpaddingleft = dimensions.MAIN_MENU_WIDTH_COLLAPSED + dimensions.MAIN_SUBMENU_WIDTH + 15;
