@@ -18,7 +18,6 @@ import envStaging from './settings/env-staging.json';
 import envUnitTest from './settings/env-unit-test.json';
 import globals from './settings/globals.json';
 import initialState from './state/initial-state.json';
-import mainMenu from './menu/main-menu.json';
 import masterData from './data/master-data.json';
 import mockData from './data/mock';
 import profileMenu from './menu/profile-menu.json';
@@ -157,7 +156,6 @@ function applyLanguage(languageCode) {
             };
         });
 
-    config.mainMenu = buildMenu(mainMenu);
     config.profileMenu = buildMenu(profileMenu);
 }
 
