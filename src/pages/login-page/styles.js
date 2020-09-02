@@ -15,9 +15,7 @@ export default (theme) => ({
     },
     loginButton: {
         marginTop: 50,
-        '&:hover': {
-            backgroundColor: '#3a3e54'
-        }
+        width: 150
     },
     loginPage: {
         backgroundColor: '#F6F7FD',
