@@ -4,10 +4,6 @@
     "isVisible": false,
     "msg": null
   },
-  "mainMenu": {
-    "expandedItems": [],
-    "isExpanded": false
-  },
   "modalDialog": {
     "cancelLabel": null,
     "customActions": null,
