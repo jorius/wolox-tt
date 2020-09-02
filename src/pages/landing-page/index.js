@@ -133,13 +133,13 @@ const LandingPage = ({ classes, onChangeLanguage, userIsLoggedIn }) => {
                         {config.text.landingPage.welcomeToYour}
                     </Typography>
                     <Typography
-                        className={classNames(classes.mainText, classes.bold)}
+                        className={classNames(classes.mainText, classes.boldText)}
                         variant="h3"
                     >
                         {config.text.landingPage.technicalInterview}
                     </Typography>
                     <Typography
-                        className={classNames(classes.mainText, classes.green)}
+                        className={classNames(classes.mainText, classes.greenText)}
                         variant="h3"
                     >
                         {config.text.appName}
@@ -186,14 +186,14 @@ const LandingPage = ({ classes, onChangeLanguage, userIsLoggedIn }) => {
                     >
                         <Grid item>
                             <div style={{ display: 'flex', padding: 20 }}>
-                                <Typography className={classNames(classes.bold, classes.green)} variant="h3">
+                                <Typography className={classNames(classes.boldText, classes.greenText)} variant="h3">
                                     350 +&nbsp;
                                 </Typography>
-                                <Typography className={classNames(classes.blue, classes.bold)} variant="h3">
+                                <Typography className={classNames(classes.blueText, classes.boldText)} variant="h3">
                                     Woloxers
                                 </Typography>
                             </div>
-                            <div className={classes.twitter}>
+                            <div className={classes.whiteText}>
                                 <Typography className={classes.twitterLink}>@Wolox</Typography>
                                 <Button
                                     className={classes.followUsButton}
@@ -216,19 +216,19 @@ const LandingPage = ({ classes, onChangeLanguage, userIsLoggedIn }) => {
                         style={{ height: 400 }}
                     >
                         <Grid item>
-                            <Typography className={classes.bold} variant="h3">
+                            <Typography className={classes.boldText} variant="h3">
                                 {config.text.landingPage.weWorkFor}
                             </Typography>
                             <div style={{ display: 'flex' }}>
-                                <Typography className={classNames(classes.blue, classes.bold)} variant="h3">
+                                <Typography className={classNames(classes.blueText, classes.boldText)} variant="h3">
                                     {config.text.landingPage.turn}
                                     &nbsp;
                                 </Typography>
-                                <Typography className={classNames(classes.bold, classes.green)} variant="h3">
+                                <Typography className={classNames(classes.boldText, classes.greenText)} variant="h3">
                                     {config.text.landingPage.ideas}
                                 </Typography>
                             </div>
-                            <Typography className={classes.bold} variant="h3">
+                            <Typography className={classes.boldText} variant="h3">
                                 {config.text.landingPage.products}
                             </Typography>
                         </Grid>
@@ -242,13 +242,13 @@ const LandingPage = ({ classes, onChangeLanguage, userIsLoggedIn }) => {
                 justify="center"
             >
                 <Grid item>
-                    <Typography className={classes.bold} variant="h4">
+                    <Typography className={classes.boldText} variant="h4">
                         {config.text.landingPage.amongBenefits}
                         &nbsp;&nbsp;
                     </Typography>
                 </Grid>
                 <Grid item>
-                    <Typography className={classNames(classes.bold, classes.blue)} variant="h4">;)</Typography>
+                    <Typography className={classNames(classes.boldText, classes.blueText)} variant="h4">;)</Typography>
                 </Grid>
             </Grid>
             <Grid
@@ -261,37 +261,37 @@ const LandingPage = ({ classes, onChangeLanguage, userIsLoggedIn }) => {
             >
                 <Grid item>
                     <img alt={config.text.landingPage.flexibleSchedule} src={IcHour} style={{ width: 100 }} />
-                    <Typography className={classNames(classes.benefitsLegend, classes.bold)}>
+                    <Typography className={classNames(classes.benefitsLegend, classes.boldText)}>
                         {config.text.landingPage.flexibleSchedule}
                     </Typography>
                 </Grid>
                 <Grid item>
                     <img alt={config.text.landingPage.homeOffice} src={IcHomeOffice} style={{ width: 100 }} />
-                    <Typography className={classNames(classes.benefitsLegend, classes.bold)}>
+                    <Typography className={classNames(classes.benefitsLegend, classes.boldText)}>
                         {config.text.landingPage.homeOffice}
                     </Typography>
                 </Grid>
                 <Grid item>
                     <img alt={config.text.landingPage.trainingsAndWorkshops} src={IcWorkshops} style={{ width: 100 }} />
-                    <Typography className={classNames(classes.benefitsLegend, classes.bold)}>
+                    <Typography className={classNames(classes.benefitsLegend, classes.boldText)}>
                         {config.text.landingPage.trainingsAndWorkshops}
                     </Typography>
                 </Grid>
                 <Grid item>
                     <img alt={config.text.landingPage.snacksAndFruits} src={IcDrinkSnacks} style={{ width: 100 }} />
-                    <Typography className={classNames(classes.benefitsLegend, classes.bold)}>
+                    <Typography className={classNames(classes.benefitsLegend, classes.boldText)}>
                         {config.text.landingPage.snacksAndFruits}
                     </Typography>
                 </Grid>
                 <Grid item>
                     <img alt={config.text.landingPage.remoteWeek} src={IcLaptop} style={{ width: 100 }} />
-                    <Typography className={classNames(classes.benefitsLegend, classes.bold, classes.remoteWeek)}>
+                    <Typography className={classNames(classes.benefitsLegend, classes.boldText, classes.remoteWeek)}>
                         {config.text.landingPage.remoteWeek}
                     </Typography>
                 </Grid>
                 <Grid item>
                     <img alt={config.text.landingPage.workInLatestTech} src={IcBrain} style={{ width: 100 }} />
-                    <Typography className={classNames(classes.benefitsLegend, classes.bold)}>
+                    <Typography className={classNames(classes.benefitsLegend, classes.boldText)}>
                         {config.text.landingPage.workInLatestTech}
                     </Typography>
                 </Grid>
@@ -303,7 +303,7 @@ const LandingPage = ({ classes, onChangeLanguage, userIsLoggedIn }) => {
                 justify="space-around"
             >
                 <Grid item>
-                    <Typography className={classes.bold} variant="h4">
+                    <Typography className={classes.boldText} variant="h4">
                         {config.text.landingPage.requirements}
                     </Typography>
                 </Grid>
@@ -311,15 +311,15 @@ const LandingPage = ({ classes, onChangeLanguage, userIsLoggedIn }) => {
                     <Grid container direction="column">
                         <Grid className={classes.requirementItem} item>
                             <img alt="green-bullet" className={classes.bullet} src={GreenBullet} />
-                            <Typography className={classes.bold}>{config.text.landingPage.advancedStudents}</Typography>
+                            <Typography className={classes.boldText}>{config.text.landingPage.advancedStudents}</Typography>
                         </Grid>
                         <Grid className={classes.requirementItem} item>
                             <img alt="black-bullet" className={classes.bullet} src={BlackBullet} />
-                            <Typography className={classes.bold}>{config.text.landingPage.englishLevel}</Typography>
+                            <Typography className={classes.boldText}>{config.text.landingPage.englishLevel}</Typography>
                         </Grid>
                         <Grid className={classes.requirementItem} item>
                             <img alt="blue-bullet" className={classes.bullet} src={BlueBullet} />
-                            <Typography className={classes.bold}>
+                            <Typography className={classes.boldText}>
                                 {config.text.landingPage.knowledgeInAgileMethods}
                             </Typography>
                         </Grid>
@@ -328,13 +328,13 @@ const LandingPage = ({ classes, onChangeLanguage, userIsLoggedIn }) => {
             </Grid>
             <Grid className={classes.footer} container justify="center">
                 <Grid item>
-                    <Typography className={classes.bold} variant="h3">
+                    <Typography className={classes.boldText} variant="h3">
                         {config.text.landingPage.thanksFor}
                         &nbsp;
                     </Typography>
                 </Grid>
                 <Grid item>
-                    <Typography className={classNames(classes.blue, classes.bold)} variant="h3">
+                    <Typography className={classNames(classes.blueText, classes.boldText)} variant="h3">
                         {config.text.landingPage.completeTheExercise}
                     </Typography>
                 </Grid>

@@ -13,12 +13,6 @@ export default (theme) => ({
     benefitsLegend: {
         paddingTop: 25
     },
-    blue: {
-        color: '#1D90C4'
-    },
-    bold: {
-        fontWeight: 'bold'
-    },
     bullet: {
         marginRight: 20
     },
@@ -36,18 +30,15 @@ export default (theme) => ({
         marginTop: 100
     },
     followUsButton: {
-        border: '2px solid #1D90C4',
+        border: `2px solid ${theme.palette.common.blue.secondary}`,
         borderRadius: 25,
         color: theme.palette.common.white,
         fontSize: '22px',
         margin: 20,
         width: 280,
         '&:hover': {
-            backgroundColor: '#1D90C4'
+            backgroundColor: theme.palette.common.blue.secondary
         }
-    },
-    green: {
-        color: '#97CF00'
     },
     icIlustraHeroImage: {
         textAlign: 'center',
@@ -58,7 +49,7 @@ export default (theme) => ({
         padding: '0 345px 40px 345px'
     },
     learnMoreButton: {
-        backgroundColor: '#2AA7DF',
+        backgroundColor: theme.palette.common.blue.primary,
         borderRadius: 25,
         color: theme.palette.common.white,
         fontSize: '22px',
@@ -66,17 +57,17 @@ export default (theme) => ({
         margin: 35,
         width: 280,
         '&:hover': {
-            backgroundColor: '#1D90C4'
+            backgroundColor: theme.palette.common.blue.secondary
         }
     },
     loginButton: {
         borderRadius: 25,
-        color: '#1D90C4',
+        color: 'theme.palette.common.blue.secondary',
         fontSize: '20px',
         fontWeight: 'bold',
         '&:hover': {
             color: theme.palette.common.white,
-            backgroundColor: '#1D90C4'
+            backgroundColor: theme.palette.common.blue.secondary
         }
     },
     mainText: {
@@ -113,14 +104,8 @@ export default (theme) => ({
         textAlign: 'left',
         whiteSpace: 'pre-line'
     },
-    twitter: {
-        color: theme.palette.common.white
-    },
     twitterLink: {
         fontSize: '20px'
-    },
-    verticalAlign: {
-        verticalAlign: 'middle'
     },
     woloxerLeft: {
         background: `url("${globalUI.getImage('./img_woloxer.png')}") no-repeat`,
