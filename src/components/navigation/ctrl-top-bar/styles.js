@@ -1,4 +1,4 @@
-import globals, { zIndex, dimensions } from '../../../styles/globals';
+import globals, { zIndex } from '../../../styles/globals';
 
 export default (theme) => ({
     ...globals(theme),
@@ -22,10 +22,6 @@ export default (theme) => ({
     },
     leftIcon: {
         marginRight: 25
-    },
-    topBar: {
-        backgroundColor: theme.palette.common.background,
-        width: `calc(100% - ${dimensions.MAIN_MENU_WIDTH}px)`
     },
     topBarPadding: {
         alignSelf: 'flex-end',

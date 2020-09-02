@@ -1,5 +1,5 @@
 // @scripts
-import globals, { colors } from '../../../styles/globals';
+import globals from '../../../styles/globals';
 
 export default (theme) => ({
     ...globals(theme),
@@ -7,7 +7,7 @@ export default (theme) => ({
         display: 'inline-block'
     },
     labelDefault: {
-        color: colors.WHITE
+        color: theme.palette.common.white
     },
     labelPrimary: {
         color: theme.palette.primary.main
