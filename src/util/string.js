@@ -1,3 +1,7 @@
+// @packages
+import stringHtmlParser from 'html-react-parser';
+import { renderToStaticMarkup } from 'react-dom/server';
+
 /**
  * Formats a string with the passed-in arguments.
  * E.g.: format("Hello {0} {1}", "Pepito", "Pérez")
@@ -9,10 +13,15 @@ export const format = (str, ...args) => {
     let formatedStr = str;
     args.forEach((value, index) => {
         while (formatedStr.indexOf(`{${index}}`) >= 0) {
-            formatedStr = formatedStr.replace(`{${index}}`, value);
+            if (typeof value === 'string') {
+                formatedStr = formatedStr.replace(`{${index}}`, value);
+            } else {
+                formatedStr = formatedStr.replace(`{${index}}`, renderToStaticMarkup(value));
+            }
         }
     });
-    return formatedStr;
+
+    return stringHtmlParser(formatedStr);
 };
 
 /**
