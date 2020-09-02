@@ -72,7 +72,7 @@ const addResponseInterceptors = (environment, globalUI) => {
 
             const responseSuccess = response.data.success || response.data;
             const responseError = !response.data.success || !response.data;
-            const responseData = response.data.data || { ...response.data };
+            const responseData = response.data.data || response.data;
             const responseMessage = response.data.message;
             const responseMessageType = responseSuccess && !responseError
                 ? constants.notificationType.SUCCESS
