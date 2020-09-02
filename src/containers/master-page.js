@@ -2,7 +2,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Redirect, withRouter } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
 
@@ -11,24 +10,11 @@ import MasterPage from '../pages/master-page';
 import { config, getRouteBy } from '../config';
 import { globalUI } from '../core';
 
-import {
-    collapseMenuItem,
-    collapseMainMenu,
-    expandMenuItem,
-    expandMainMenu
-} from '../redux';
-
 const MasterPageContainer = ({
     history,
     loadingPageIsVisible,
     loadingPageMsg,
     location,
-    mainMenuExpandedItems,
-    mainMenuIsExpanded,
-    mainMenuOnCollapse,
-    mainMenuOnCollapseItem,
-    mainMenuOnExpand,
-    mainMenuOnExpandItem,
     modalDialogCancelLabel,
     modalDialogCustomActions,
     modalDialogCustomActionsTop,
@@ -94,15 +80,6 @@ const MasterPageContainer = ({
                 isVisible: loadingPageIsVisible,
                 msg: loadingPageMsg
             }}
-            mainMenu={{
-                expandedItems: mainMenuExpandedItems,
-                isExpanded: mainMenuIsExpanded,
-                menuItems: config.mainMenu,
-                onCollapse: mainMenuOnCollapse,
-                onCollapseItem: mainMenuOnCollapseItem,
-                onExpand: mainMenuOnExpand,
-                onExpandItem: mainMenuOnExpandItem
-            }}
             title={config.text.appName}
             toastNotificationProps={{
                 isVisible: toastNotificationIsVisible,
@@ -142,12 +119,6 @@ MasterPageContainer.propTypes = {
     location: PropTypes.shape({
         pathname: PropTypes.string.isRequired
     }).isRequired,
-    mainMenuExpandedItems: PropTypes.arrayOf(PropTypes.string).isRequired,
-    mainMenuIsExpanded: PropTypes.bool.isRequired,
-    mainMenuOnCollapse: PropTypes.func.isRequired,
-    mainMenuOnCollapseItem: PropTypes.func.isRequired,
-    mainMenuOnExpand: PropTypes.func.isRequired,
-    mainMenuOnExpandItem: PropTypes.func.isRequired,
     toastNotificationIsVisible: PropTypes.bool.isRequired,
     toastNotificationMsg: PropTypes.string,
     toastNotificationType: PropTypes.string,
@@ -178,15 +149,12 @@ MasterPageContainer.defaultProps = {
 
 const mapStateToProps = ({
     loadingPage,
-    mainMenu,
     modalDialog,
     toastNotification,
     user
 }) => ({
     loadingPageIsVisible: loadingPage.isVisible,
     loadingPageMsg: loadingPage.msg,
-    mainMenuExpandedItems: mainMenu.expandedItems,
-    mainMenuIsExpanded: mainMenu.isExpanded,
     modalDialogCancelLabel: modalDialog.cancelLabel,
     modalDialogCustomActions: modalDialog.customActions,
     modalDialogCustomActionsTop: modalDialog.customActionsTop,
@@ -208,14 +176,7 @@ const mapStateToProps = ({
     userPermissions: user.account.permissions
 });
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({
-    mainMenuOnCollapse: collapseMainMenu,
-    mainMenuOnCollapseItem: collapseMenuItem,
-    mainMenuOnExpand: expandMainMenu,
-    mainMenuOnExpandItem: expandMenuItem
-}, dispatch);
-
 export default compose(
     withRouter,
-    connect(mapStateToProps, mapDispatchToProps)
+    connect(mapStateToProps, null)
 )(MasterPageContainer);

@@ -16,7 +16,6 @@ const MasterPage = ({
     classes,
     currentUrl,
     loadingPageProps,
-    mainMenu,
     modalDialogProps,
     title,
     toastNotificationProps,
@@ -27,7 +26,6 @@ const MasterPage = ({
             <title>{title}</title>
         </Helmet>
         <CtrlRoutes
-            mainMenuIsExpanded={mainMenu.isExpanded}
             userProps={userProps}
         />
         <CtrlCommonControls
@@ -37,7 +35,6 @@ const MasterPage = ({
         />
         <CtrlRestrictedControls
             currentUrl={currentUrl}
-            mainMenu={mainMenu}
             userProps={userProps}
         />
     </div>
@@ -46,32 +43,6 @@ const MasterPage = ({
 MasterPage.propTypes = {
     classes: PropTypes.object.isRequired,
     currentUrl: PropTypes.string.isRequired,
-    mainMenu: PropTypes.shape({
-        expandedItems: PropTypes.arrayOf(PropTypes.string).isRequired,
-        isExpanded: PropTypes.bool.isRequired,
-        menuItems: PropTypes.arrayOf(PropTypes.shape({
-            description: PropTypes.string.isRequired,
-            icon: PropTypes.string,
-            isDefault: PropTypes.bool,
-            name: PropTypes.string.isRequired,
-            subMenuItems: PropTypes.arrayOf(PropTypes.shape({
-                description: PropTypes.string.isRequired,
-                icon: PropTypes.string,
-                isDefault: PropTypes.bool,
-                name: PropTypes.string.isRequired,
-                subMenuItems: PropTypes.arrayOf(PropTypes.shape({
-                    description: PropTypes.string.isRequired,
-                    icon: PropTypes.string,
-                    isDefault: PropTypes.bool,
-                    name: PropTypes.string.isRequired
-                }))
-            }))
-        })).isRequired,
-        onCollapse: PropTypes.func.isRequired,
-        onCollapseItem: PropTypes.func.isRequired,
-        onExpand: PropTypes.func.isRequired,
-        onExpandItem: PropTypes.func.isRequired
-    }).isRequired,
     modalDialogProps: PropTypes.shape({
         cancelLabel: PropTypes.string,
         customActions: PropTypes.element,

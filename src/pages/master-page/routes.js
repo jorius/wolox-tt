@@ -8,14 +8,12 @@ import { withStyles } from '@material-ui/core/styles';
 // @scripts
 import { config } from '../../config';
 import { mapComponent } from './component-mapper';
-import { dimensions } from '../../styles/globals';
 
 // @styles
 import styles from './styles';
 
 const CtrlRoutes = ({
     classes,
-    mainMenuIsExpanded,
     userProps
 }) => {
     const routes = userProps.isLoggedIn
@@ -27,14 +25,8 @@ const CtrlRoutes = ({
         [classes.loggedInPage]: userProps.isLoggedIn
     });
 
-    let containerpaddingleft = 0;
-
-    if (mainMenuIsExpanded && userProps.isLoggedIn) {
-        containerpaddingleft = dimensions.MAIN_MENU_WIDTH_COLLAPSED + dimensions.MAIN_SUBMENU_WIDTH + 15;
-    }
-
     return (
-        <div className={containerClass} style={{ paddingLeft: containerpaddingleft }}>
+        <div className={containerClass}>
             <Switch>
                 {
                     routes.map((route, index) => (
@@ -53,7 +45,6 @@ const CtrlRoutes = ({
 
 CtrlRoutes.propTypes = {
     classes: PropTypes.object.isRequired,
-    mainMenuIsExpanded: PropTypes.bool.isRequired,
     userProps: PropTypes.shape({
         isLoggedIn: PropTypes.bool.isRequired,
         permissions: PropTypes.arrayOf(PropTypes.string).isRequired
