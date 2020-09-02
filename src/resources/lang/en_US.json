@@ -1,7 +1,15 @@
 {
   "appName": "Wolox",
+  "common": {
+    "in": " in "
+  },
   "homePage": {
-    "content": "Home Page"
+    "content": "Home Page",
+    "createdBy": " created by ",
+    "itHasLicense": "It has an {0} license type ",
+    "keyword": "Keywords",
+    "techCollection": "Technologies list",
+    "usesLangs": "and uses {0} as its language core."
   },
   "landingPage": {
     "advancedStudents": "Advanced or received students from careers in\r\n computer science, software, systems or electronic",
