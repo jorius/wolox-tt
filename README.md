@@ -1,5 +1,10 @@
 # wolox-tt
 
+# Currently deployed in:
+## [https://wlx-tt.azurewebsites.net](https://wlx-tt.azurewebsites.net)
+
+<hr />
+
 ### Content
 
 1. [Scope completed](#scope-completed)
@@ -22,8 +27,8 @@ Criteria acceptance completed so far: **88%**
 
 ### **Optional criteria acceptance**
 Total criteria acceptance items: **8** <br />
-Total criteria acceptance items completed so far: **4** <br/>
-Criteria acceptance completed so far: **50%**
+Total criteria acceptance items completed so far: **6** <br/>
+Criteria acceptance completed so far: **75%**
 
 ## Prerequisites
 
@@ -175,8 +180,8 @@ Open the `globals.json` file located in `src/config/settings` and toggle the pro
 - [x] Use CSS Grid
 - [x] Implement component and data flow test with jest
 - [ ] Configure webpack
-- [ ] Make the web accessible ”
+- [x] Make the web "accessible”
 ### React
 - [x] Use i18n to handle language texts through the web app and add a button to switch between languages
 - [ ] Implement error boundary
-- [ ] Make deploy of the web app to a related production environment
+- [x] Make deploy of the web app to a related production environment
