@@ -39,5 +39,10 @@ export default (theme) => ({
     },
     formTitle: {
         marginBottom: 25
+    },
+    passwordInput: {
+        '& span.MuiIcon-root': {
+            color: '#9e9e9e'
+        }
     }
 });
