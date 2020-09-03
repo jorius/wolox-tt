@@ -19,7 +19,8 @@
   },
   "techCollection": {
     "items": [],
-    "totalCount": null
+    "sortDirection": "default",
+    "totalCount": 0
   },
   "toastNotification": {
     "isVisible": false,
