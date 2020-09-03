@@ -28,59 +28,59 @@ const CtrlLoginForm = ({
 }) => (
     <div id={id}>
         <Grid container direction="row">
-            <Hidden mdDown>
-                <Grid className={classes.loginBackground} item lg={6} sm={6} md={6} xs={12} />
+            <Hidden mdDown smDown xsDown>
+                <Grid className={classes.loginBackground} item lg={6} />
             </Hidden>
-            <Grid className={classes.formContainer} item lg={6} sm={6} md={12} xs={12}>
+            <Grid className={classes.formContainer} item lg={6} sm={12} md={12} xs={12}>
                 <form
                     autoComplete="off"
                     className={classes.form}
                     noValidate
                 >
-                <Grid justify="center" container>
-                    <Grid item>
-                        <Typography
-                            className={classes.formTitle}
-                            variant="h5"
-                        >
-                            {config.text.loginPage.welcomeToWolox}
-                        </Typography>
+                    <Grid justify="center" container>
+                        <Grid item>
+                            <Typography
+                                className={classes.formTitle}
+                                variant="h5"
+                            >
+                                {config.text.loginPage.welcomeToWolox}
+                            </Typography>
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid container>
-                    <Grid item lg={12} sm={12} md={12} xs={12}>
-                        <CtrlTextField
-                            autoFocus
-                            icon="account_circle"
-                            id={`${id}-email-input`}
-                            label={config.text.loginPage.userLabel}
-                            name="email"
-                            onChange={onFieldChange}
-                            onEnter={onLogin}
-                            placeholder={config.text.loginPage.userPlaceholder}
-                            required
-                            showErrors={showErrors}
-                            type="email"
-                            value={emailValue}
-                        />
+                    <Grid container>
+                        <Grid item lg={12} sm={12} md={12} xs={12}>
+                            <CtrlTextField
+                                autoFocus
+                                icon="account_circle"
+                                id={`${id}-email-input`}
+                                label={config.text.loginPage.userLabel}
+                                name="email"
+                                onChange={onFieldChange}
+                                onEnter={onLogin}
+                                placeholder={config.text.loginPage.userPlaceholder}
+                                required
+                                showErrors={showErrors}
+                                type="email"
+                                value={emailValue}
+                            />
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid container>
-                    <Grid item lg={12} sm={12} md={12} xs={12}>
-                        <CtrlTextField
-                            id={`${id}-password-input`}
-                            label={config.text.loginPage.password}
-                            minLength={6}
-                            name="password"
-                            onChange={onFieldChange}
-                            onEnter={onLogin}
-                            required
-                            showErrors={showErrors}
-                            type="password"
-                            value={passwordValue}
-                        />
+                    <Grid container>
+                        <Grid item lg={12} sm={12} md={12} xs={12}>
+                            <CtrlTextField
+                                id={`${id}-password-input`}
+                                label={config.text.loginPage.password}
+                                minLength={6}
+                                name="password"
+                                onChange={onFieldChange}
+                                onEnter={onLogin}
+                                required
+                                showErrors={showErrors}
+                                type="password"
+                                value={passwordValue}
+                            />
+                        </Grid>
                     </Grid>
-                </Grid>
                     <Grid container>
                         <Grid item>
                             <CtrlCheckField

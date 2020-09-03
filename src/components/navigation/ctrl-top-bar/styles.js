@@ -1,3 +1,6 @@
+/* eslint-disable max-len */
+
+// @scripts
 import globals, { zIndex } from '../../../styles/globals';
 
 export default (theme) => ({
@@ -23,10 +26,31 @@ export default (theme) => ({
     leftIcon: {
         marginRight: 25
     },
-    topBarPadding: {
-        alignSelf: 'flex-end',
-        justifyContent: 'flex-end',
-        width: 300
+    searchTextField: {
+        marginBottom: -5,
+        marginLeft: 40,
+        paddingRight: 55,
+        marginTop: 15,
+        '& input.MuiInputBase-input, label.Mui-focused, label.MuiInputLabel-root, label.MuiInputLabel-formControl, .MuiInput-underline:after, span.MuiIcon-root': {
+            color: theme.palette.common.white
+        },
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: theme.palette.common.white
+            },
+            '&:hover fieldset': {
+                borderColor: theme.palette.common.white
+            },
+            '&.Mui-focused fieldset': {
+                borderColor: theme.palette.common.white
+            }
+        }
+    },
+    sortIcon: {
+        color: theme.palette.common.white
+    },
+    sortIconSelected: {
+        backgroundColor: '#175091'
     },
     topBarRoot: {
         flexGrow: 1,

@@ -17,6 +17,9 @@ const MasterPage = ({
     currentUrl,
     loadingPageProps,
     modalDialogProps,
+    onFilterTechCollection,
+    onSortTechCollection,
+    techCollectionSortDirection,
     title,
     toastNotificationProps,
     userProps
@@ -35,6 +38,9 @@ const MasterPage = ({
         />
         <CtrlRestrictedControls
             currentUrl={currentUrl}
+            onFilterTechCollection={onFilterTechCollection}
+            onSortTechCollection={onSortTechCollection}
+            techCollectionSortDirection={techCollectionSortDirection}
             userProps={userProps}
         />
     </div>
@@ -43,6 +49,10 @@ const MasterPage = ({
 MasterPage.propTypes = {
     classes: PropTypes.object.isRequired,
     currentUrl: PropTypes.string.isRequired,
+    loadingPageProps: PropTypes.shape({
+        isVisible: PropTypes.bool.isRequired,
+        msg: PropTypes.oneOfType([PropTypes.element, PropTypes.string])
+    }).isRequired,
     modalDialogProps: PropTypes.shape({
         cancelLabel: PropTypes.string,
         customActions: PropTypes.element,
@@ -55,10 +65,9 @@ MasterPage.propTypes = {
         onHide: PropTypes.func.isRequired,
         title: PropTypes.string
     }).isRequired,
-    loadingPageProps: PropTypes.shape({
-        isVisible: PropTypes.bool.isRequired,
-        msg: PropTypes.oneOfType([PropTypes.element, PropTypes.string])
-    }).isRequired,
+    onFilterTechCollection: PropTypes.func.isRequired,
+    onSortTechCollection: PropTypes.func.isRequired,
+    techCollectionSortDirection: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     toastNotificationProps: PropTypes.shape({
         isVisible: PropTypes.bool.isRequired,

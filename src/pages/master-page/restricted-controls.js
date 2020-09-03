@@ -6,6 +6,9 @@ import React from 'react';
 import CtrlTopBar from '../../components/navigation/ctrl-top-bar';
 
 const CtrlRestrictedControls = ({
+    onFilterTechCollection,
+    onSortTechCollection,
+    techCollectionSortDirection,
     userProps
 }) => {
     if (!userProps.isLoggedIn) {
@@ -15,7 +18,10 @@ const CtrlRestrictedControls = ({
     return (
         <CtrlTopBar
             id="ctrl-top-bar"
+            onFilterTechCollection={onFilterTechCollection}
+            onSortTechCollection={onSortTechCollection}
             profileMenu={userProps.profileMenu}
+            techCollectionSortDirection={techCollectionSortDirection}
             userName={userProps.name}
             userPermissions={userProps.permissions}
         />
@@ -23,6 +29,9 @@ const CtrlRestrictedControls = ({
 };
 
 CtrlRestrictedControls.propTypes = {
+    onFilterTechCollection: PropTypes.func.isRequired,
+    onSortTechCollection: PropTypes.func.isRequired,
+    techCollectionSortDirection: PropTypes.string.isRequired,
     userProps: PropTypes.shape({
         email: PropTypes.string,
         isLoggedIn: PropTypes.bool.isRequired,

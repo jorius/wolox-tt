@@ -2,6 +2,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Redirect, withRouter } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
 
@@ -9,6 +10,7 @@ import { connect } from 'react-redux';
 import MasterPage from '../pages/master-page';
 import { config, getRouteBy } from '../config';
 import { globalUI } from '../core';
+import { filterTechCollection, sortTechCollection } from '../redux';
 
 const MasterPageContainer = ({
     history,
@@ -26,6 +28,9 @@ const MasterPageContainer = ({
     modalDialogShowCancel,
     modalDialogTitle,
     modalDialogWidth,
+    onFilterTechCollection,
+    onSortTechCollection,
+    techCollectionSortDirection,
     toastNotificationIsVisible,
     toastNotificationMsg,
     toastNotificationType,
@@ -51,7 +56,7 @@ const MasterPageContainer = ({
         return <Redirect to={loginUrl} />;
     }
 
-    if (userIsLoggedIn && currentUrl === loginUrl) {
+    if ((userIsLoggedIn && (currentUrl === loginUrl)) || (route && route.name === 'landing')) {
         return <Redirect to="/home" />;
     }
 
@@ -80,6 +85,9 @@ const MasterPageContainer = ({
                 isVisible: loadingPageIsVisible,
                 msg: loadingPageMsg
             }}
+            onFilterTechCollection={onFilterTechCollection}
+            onSortTechCollection={onSortTechCollection}
+            techCollectionSortDirection={techCollectionSortDirection}
             title={config.text.appName}
             toastNotificationProps={{
                 isVisible: toastNotificationIsVisible,
@@ -119,6 +127,9 @@ MasterPageContainer.propTypes = {
     location: PropTypes.shape({
         pathname: PropTypes.string.isRequired
     }).isRequired,
+    onFilterTechCollection: PropTypes.func.isRequired,
+    onSortTechCollection: PropTypes.func.isRequired,
+    techCollectionSortDirection: PropTypes.string.isRequired,
     toastNotificationIsVisible: PropTypes.bool.isRequired,
     toastNotificationMsg: PropTypes.string,
     toastNotificationType: PropTypes.string,
@@ -150,6 +161,7 @@ MasterPageContainer.defaultProps = {
 const mapStateToProps = ({
     loadingPage,
     modalDialog,
+    techCollection,
     toastNotification,
     user
 }) => ({
@@ -166,6 +178,7 @@ const mapStateToProps = ({
     modalDialogShowCancel: modalDialog.showCancel,
     modalDialogTitle: modalDialog.title,
     modalDialogWidth: modalDialog.width,
+    techCollectionSortDirection: techCollection.sortDirection,
     toastNotificationIsVisible: toastNotification.isVisible,
     toastNotificationMsg: toastNotification.msg,
     toastNotificationType: toastNotification.type,
@@ -176,7 +189,12 @@ const mapStateToProps = ({
     userPermissions: user.account.permissions
 });
 
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+    onFilterTechCollection: filterTechCollection,
+    onSortTechCollection: sortTechCollection
+}, dispatch);
+
 export default compose(
     withRouter,
-    connect(mapStateToProps, null)
+    connect(mapStateToProps, mapDispatchToProps)
 )(MasterPageContainer);

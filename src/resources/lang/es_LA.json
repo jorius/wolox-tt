@@ -4,11 +4,20 @@
     "in": " en "
   },
   "homePage": {
+    "ascSort": "Orden ascendente",
     "content": "Página principal",
     "createdBy": " creado por ",
+    "defaultSort": "Orden por defecto",
+    "descSort": "Orden descendente",
+    "filterByLang": "Filtrar por lenguaje",
+    "filterByLicense": "Filtrar por licencia",
+    "filterByTechType": "Filtrar por tipo de tecnología",
     "itHasLicense": "Tiene una licencia de tipo {0} ",
-    "keyword": "Palabras clave",
+    "search": "Búsqueda",
+    "summary": "Resumen y filtros",
     "techCollection": "Lista de tecnologías",
+    "totalCount": "Elementos totales",
+    "totalCountFilter": "Elementros filtrados",
     "usesLangs": "y utiliza {0} como lenguage principal."
   },
   "landingPage": {

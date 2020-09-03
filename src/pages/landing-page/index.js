@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
+import Hidden from '@material-ui/core/Hidden';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
@@ -125,7 +126,7 @@ const LandingPage = ({ classes, onChangeLanguage, userIsLoggedIn }) => {
                 id="start"
                 justify="space-between"
             >
-                <Grid item>
+                <Grid item lg={6} md={12} sm={12} xs={12}>
                     <Typography
                         className={classes.mainText}
                         variant="h3"
@@ -145,9 +146,11 @@ const LandingPage = ({ classes, onChangeLanguage, userIsLoggedIn }) => {
                         {config.text.appName}
                     </Typography>
                 </Grid>
-                <Grid className={classes.icIlustraHeroImage} item>
-                    <img alt="background" src={IcIlustraHero} />
-                </Grid>
+                <Hidden>
+                    <Grid className={classes.icIlustraHeroImage} item>
+                        <img alt="background" src={IcIlustraHero} />
+                    </Grid>
+                </Hidden>
             </Grid>
             <Grid
                 alignItems="center"

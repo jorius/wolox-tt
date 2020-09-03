@@ -7,15 +7,17 @@ import { connect } from 'react-redux';
 // @scripts
 import HomePage from '../pages/home-page';
 import { config } from '../config';
-import { getTechCollection } from '../redux';
+import { filterTechCollection, getTechCollection } from '../redux';
 
 const HomePageContainer = ({
+    onFilterTechCollection,
     onGetTechCollection,
     techCollectionItems,
     totalTechCollection
 }) => (
     <HomePage
         content={config.text.homePage.content}
+        onFilterTechCollection={onFilterTechCollection}
         onGetTechCollection={onGetTechCollection}
         techCollectionItems={techCollectionItems}
         totalTechCollection={totalTechCollection}
@@ -23,9 +25,11 @@ const HomePageContainer = ({
 );
 
 HomePageContainer.propTypes = {
+    onFilterTechCollection: PropTypes.func.isRequired,
     onGetTechCollection: PropTypes.func.isRequired,
     techCollectionItems: PropTypes.arrayOf(PropTypes.shape({
         author: PropTypes.string.isRequired,
+        flagged: PropTypes.bool,
         language: PropTypes.string.isRequired,
         license: PropTypes.string.isRequired,
         logo: PropTypes.string.isRequired,
@@ -38,7 +42,7 @@ HomePageContainer.propTypes = {
 
 HomePageContainer.defaultProps = {
     techCollectionItems: null,
-    totalTechCollection: null
+    totalTechCollection: 0
 };
 
 const mapStateToProps = ({ techCollection }) => ({
@@ -47,6 +51,7 @@ const mapStateToProps = ({ techCollection }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
+    onFilterTechCollection: filterTechCollection,
     onGetTechCollection: getTechCollection
 }, dispatch);
 

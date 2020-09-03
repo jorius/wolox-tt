@@ -34,6 +34,20 @@ export const theme = createMuiTheme({
             root: {
                 textTransform: 'none'
             }
+        },
+        MuiFormLabel: {
+            root: {
+                '&$focused': {
+                    color: colors.blue.primary
+                }
+            }
+        },
+        MuiInput: {
+            underline: {
+                '&:after': {
+                    borderBottom: `2px solid ${colors.blue.primary}`
+                }
+            }
         }
     },
     palette: {

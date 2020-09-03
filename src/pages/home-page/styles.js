@@ -7,13 +7,20 @@ export default (theme) => ({
         paddingBottom: 25,
         paddingRight: 25
     },
+    filtersCount: {
+        marginBottom: 20
+    },
+    filtersTitle: {
+        marginBottom: 25
+    },
     techFilters: {
-        padding: 25
+        padding: '45px 25px 25px 25px'
     },
     techItem: {
         padding: 25
     },
-    techLogo: {
+    techItemUnflagged: {
+        opacity: 0.2
     },
     techTag: {
         cursor: 'pointer',
@@ -27,6 +34,11 @@ export default (theme) => ({
         padding: 15
     },
     textField: {
+        paddingBottom: 27,
         width: '100%'
+    },
+    totalCount: {
+        marginLeft: '8%',
+        marginRight: 90
     }
 });

@@ -52,5 +52,5 @@ export default (theme) => ({
  * Common dimensions
  */
 export const dimensions = {
-    TOP_BAR_HEIGHT: 64
+    TOP_BAR_HEIGHT: 88
 };
