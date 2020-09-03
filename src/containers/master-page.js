@@ -56,7 +56,7 @@ const MasterPageContainer = ({
         return <Redirect to={loginUrl} />;
     }
 
-    if ((userIsLoggedIn && (currentUrl === loginUrl)) || (route && route.name === 'landing')) {
+    if ((userIsLoggedIn && (currentUrl === loginUrl)) || (userIsLoggedIn && (route && route.name === 'landing'))) {
         return <Redirect to="/home" />;
     }
 
