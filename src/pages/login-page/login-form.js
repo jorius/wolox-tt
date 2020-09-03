@@ -68,6 +68,7 @@ const CtrlLoginForm = ({
                     <Grid container>
                         <Grid item lg={12} sm={12} md={12} xs={12}>
                             <CtrlTextField
+                                className={classes.passwordInput}
                                 id={`${id}-password-input`}
                                 label={config.text.loginPage.password}
                                 minLength={6}

@@ -35,6 +35,6 @@
       "permissions": []
     },
     "languageCode": "en",
-    "rememberMe": true
+    "rememberMe": false
   }
 }
