@@ -32,6 +32,16 @@ Criteria acceptance completed so far: **50%**
 3. [VS Code](https://code.visualstudio.com/)
 
 ## Notes
+### **Your login endpoint works with any data sent but if you want to login with service mocker enabled must use the following credentials:**
+
+<br />
+
+| Email               | Password    |
+|-                    |-            |
+| admin@wolox.com.ar  | 123456      |
+
+<br />
+
 ### **I didn't see necessary implement all the needed fonts through the files you sent me within the assets because I already had a helper in the core to load custom fonts from custom sources.**
 
 <br />
