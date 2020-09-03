@@ -48,6 +48,7 @@
     "build": "cross-env REACT_APP_ENV=development npm-run-all build-css build-js",
     "build-css": "node-sass --include-path ./src --include-path ./node_modules src/ -o src/",
     "build-js": "react-scripts build",
+    "build-prod": "cross-env REACT_APP_ENV=production npm-run-all build-css build-js",
     "eject": "react-scripts eject",
     "lintj": "./node_modules/.bin/eslint --ext .js src/",
     "lints": "./node_modules/.bin/stylelint \"src/**/*.scss\"",
