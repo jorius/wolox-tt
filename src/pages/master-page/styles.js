@@ -10,6 +10,6 @@ export default (theme) => ({
     },
     loggedInPage: {
         backgroundColor: theme.palette.background.paper,
-        paddingTop: dimensions.TOP_BAR_HEIGHT + 16
+        padding: `${dimensions.TOP_BAR_HEIGHT + 25}px 0 0 25px`
     }
 });

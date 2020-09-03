@@ -1,5 +1,5 @@
 // @scripts
-import globals, { colors, zIndex } from '../../../styles/globals';
+import globals, { zIndex } from '../../../styles/globals';
 
 export default (theme) => ({
     ...globals(theme),
@@ -23,6 +23,6 @@ export default (theme) => ({
         zIndex: zIndex.LOADING_PAGE + 1
     },
     msg: {
-        color: colors.WHITE
+        color: theme.palette.common.white
     }
 });

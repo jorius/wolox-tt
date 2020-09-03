@@ -1,7 +1,24 @@
 {
   "appName": "Wolox",
+  "common": {
+    "in": " in "
+  },
   "homePage": {
-    "content": "Home Page"
+    "ascSort": "Asc sort",
+    "content": "Home Page",
+    "createdBy": " created by ",
+    "defaultSort": "Default sort",
+    "descSort": "Desc sort",
+    "filterByLang": "Filter by language",
+    "filterByLicense": "Filter by license",
+    "filterByTechType": "Filter by tech type",
+    "itHasLicense": "It has an {0} license type ",
+    "search": "Search",
+    "summary": "Summary and filters",
+    "techCollection": "Technologies list",
+    "totalCount": "Total items",
+    "totalCountFilter": "Total filtered items",
+    "usesLangs": "and uses {0} as its language core."
   },
   "landingPage": {
     "advancedStudents": "Advanced or received students from careers in\r\n computer science, software, systems or electronic",

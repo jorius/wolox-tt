@@ -1,7 +1,6 @@
 // @scripts
 import {
     isAllPropsValid,
-    isBetween,
     isDate,
     isEmail,
     isName,
@@ -24,16 +23,6 @@ describe('isAllPropsValid', () => {
     test('isAllPropsValid (false)', () => {
         const obj = { a: 1, usr: { isValid: true }, pwd: { isValid: false } };
         expect(isAllPropsValid(obj)).toEqual(false);
-    });
-});
-
-describe('isBetween', () => {
-    test('isBetween (true)', () => {
-        expect(isBetween(5, 0, 10)).toEqual(true);
-    });
-
-    test('isBetween (false)', () => {
-        expect(isBetween(15, 0, 10)).toEqual(false);
     });
 });
 

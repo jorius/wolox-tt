@@ -98,17 +98,7 @@ export const initializeGlobalUI = (environment, store) => {
         (route) => route.name === 'home'
     ).url;
 
-    globalUI.getDefaultUrl = () => {
-        const defaultMenu = config.mainMenu.find(
-            (menuItem) => menuItem.isDefault === true
-        ) || config.mainMenu[0];
-
-        const defaultUrl = defaultMenu
-            ? defaultMenu.url
-            : globalUI.getHomeUrl();
-
-        return defaultUrl;
-    };
+    globalUI.getDefaultUrl = () => globalUI.getHomeUrl();
 
     globalUI.navigateToUrl = (url) => {
         if (url === globalUI.getLoginUrl()) {

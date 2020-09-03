@@ -10,25 +10,13 @@ import { connect } from 'react-redux';
 import MasterPage from '../pages/master-page';
 import { config, getRouteBy } from '../config';
 import { globalUI } from '../core';
-
-import {
-    collapseMenuItem,
-    collapseMainMenu,
-    expandMenuItem,
-    expandMainMenu
-} from '../redux';
+import { filterTechCollection, sortTechCollection } from '../redux';
 
 const MasterPageContainer = ({
     history,
     loadingPageIsVisible,
     loadingPageMsg,
     location,
-    mainMenuExpandedItems,
-    mainMenuIsExpanded,
-    mainMenuOnCollapse,
-    mainMenuOnCollapseItem,
-    mainMenuOnExpand,
-    mainMenuOnExpandItem,
     modalDialogCancelLabel,
     modalDialogCustomActions,
     modalDialogCustomActionsTop,
@@ -40,6 +28,9 @@ const MasterPageContainer = ({
     modalDialogShowCancel,
     modalDialogTitle,
     modalDialogWidth,
+    onFilterTechCollection,
+    onSortTechCollection,
+    techCollectionSortDirection,
     toastNotificationIsVisible,
     toastNotificationMsg,
     toastNotificationType,
@@ -65,7 +56,7 @@ const MasterPageContainer = ({
         return <Redirect to={loginUrl} />;
     }
 
-    if (userIsLoggedIn && currentUrl === loginUrl) {
+    if ((userIsLoggedIn && (currentUrl === loginUrl)) || (route && route.name === 'landing')) {
         return <Redirect to="/home" />;
     }
 
@@ -94,15 +85,9 @@ const MasterPageContainer = ({
                 isVisible: loadingPageIsVisible,
                 msg: loadingPageMsg
             }}
-            mainMenu={{
-                expandedItems: mainMenuExpandedItems,
-                isExpanded: mainMenuIsExpanded,
-                menuItems: config.mainMenu,
-                onCollapse: mainMenuOnCollapse,
-                onCollapseItem: mainMenuOnCollapseItem,
-                onExpand: mainMenuOnExpand,
-                onExpandItem: mainMenuOnExpandItem
-            }}
+            onFilterTechCollection={onFilterTechCollection}
+            onSortTechCollection={onSortTechCollection}
+            techCollectionSortDirection={techCollectionSortDirection}
             title={config.text.appName}
             toastNotificationProps={{
                 isVisible: toastNotificationIsVisible,
@@ -142,12 +127,9 @@ MasterPageContainer.propTypes = {
     location: PropTypes.shape({
         pathname: PropTypes.string.isRequired
     }).isRequired,
-    mainMenuExpandedItems: PropTypes.arrayOf(PropTypes.string).isRequired,
-    mainMenuIsExpanded: PropTypes.bool.isRequired,
-    mainMenuOnCollapse: PropTypes.func.isRequired,
-    mainMenuOnCollapseItem: PropTypes.func.isRequired,
-    mainMenuOnExpand: PropTypes.func.isRequired,
-    mainMenuOnExpandItem: PropTypes.func.isRequired,
+    onFilterTechCollection: PropTypes.func.isRequired,
+    onSortTechCollection: PropTypes.func.isRequired,
+    techCollectionSortDirection: PropTypes.string.isRequired,
     toastNotificationIsVisible: PropTypes.bool.isRequired,
     toastNotificationMsg: PropTypes.string,
     toastNotificationType: PropTypes.string,
@@ -178,15 +160,13 @@ MasterPageContainer.defaultProps = {
 
 const mapStateToProps = ({
     loadingPage,
-    mainMenu,
     modalDialog,
+    techCollection,
     toastNotification,
     user
 }) => ({
     loadingPageIsVisible: loadingPage.isVisible,
     loadingPageMsg: loadingPage.msg,
-    mainMenuExpandedItems: mainMenu.expandedItems,
-    mainMenuIsExpanded: mainMenu.isExpanded,
     modalDialogCancelLabel: modalDialog.cancelLabel,
     modalDialogCustomActions: modalDialog.customActions,
     modalDialogCustomActionsTop: modalDialog.customActionsTop,
@@ -198,6 +178,7 @@ const mapStateToProps = ({
     modalDialogShowCancel: modalDialog.showCancel,
     modalDialogTitle: modalDialog.title,
     modalDialogWidth: modalDialog.width,
+    techCollectionSortDirection: techCollection.sortDirection,
     toastNotificationIsVisible: toastNotification.isVisible,
     toastNotificationMsg: toastNotification.msg,
     toastNotificationType: toastNotification.type,
@@ -209,10 +190,8 @@ const mapStateToProps = ({
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-    mainMenuOnCollapse: collapseMainMenu,
-    mainMenuOnCollapseItem: collapseMenuItem,
-    mainMenuOnExpand: expandMainMenu,
-    mainMenuOnExpandItem: expandMenuItem
+    onFilterTechCollection: filterTechCollection,
+    onSortTechCollection: sortTechCollection
 }, dispatch);
 
 export default compose(

@@ -1,4 +1,7 @@
-import globals, { zIndex, dimensions } from '../../../styles/globals';
+/* eslint-disable max-len */
+
+// @scripts
+import globals, { zIndex } from '../../../styles/globals';
 
 export default (theme) => ({
     ...globals(theme),
@@ -23,14 +26,31 @@ export default (theme) => ({
     leftIcon: {
         marginRight: 25
     },
-    topBar: {
-        backgroundColor: theme.palette.common.background,
-        width: `calc(100% - ${dimensions.MAIN_MENU_WIDTH}px)`
+    searchTextField: {
+        marginBottom: -5,
+        marginLeft: 40,
+        paddingRight: 55,
+        marginTop: 15,
+        '& input.MuiInputBase-input, label.Mui-focused, label.MuiInputLabel-root, label.MuiInputLabel-formControl, .MuiInput-underline:after, span.MuiIcon-root': {
+            color: theme.palette.common.white
+        },
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: theme.palette.common.white
+            },
+            '&:hover fieldset': {
+                borderColor: theme.palette.common.white
+            },
+            '&.Mui-focused fieldset': {
+                borderColor: theme.palette.common.white
+            }
+        }
     },
-    topBarPadding: {
-        alignSelf: 'flex-end',
-        justifyContent: 'flex-end',
-        width: 300
+    sortIcon: {
+        color: theme.palette.common.white
+    },
+    sortIconSelected: {
+        backgroundColor: '#175091'
     },
     topBarRoot: {
         flexGrow: 1,

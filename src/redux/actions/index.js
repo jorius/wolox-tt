@@ -1,5 +1,4 @@
 export * from './loading-page';
-export * from './main-menu';
 export * from './modal-dialog';
 export * from './tech-collection';
 export * from './toast-notification';

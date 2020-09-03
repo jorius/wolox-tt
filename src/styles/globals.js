@@ -10,12 +10,13 @@ export const DEFAULT_FIELD_VARIANT = 'standard';
  * Common colors.
  */
 export const colors = {
-    BLACK: '#000',
-    DARK_CYAN: '#00A582',
-    LAVENDER: '#E2F2F1',
-    LIGHT_SEA_GREEN: '#00CBA0',
-    TEAL: '#009979',
-    WHITE: '#fff'
+    blue: {
+        primary: '#2AA7DF',
+        secondary: '#1D90C4'
+    },
+    green: {
+        primary: '#97CF00'
+    }
 };
 
 /**
@@ -33,12 +34,17 @@ export const zIndex = {
  * Global classes.
  */
 export default (theme) => ({
-    gblLink: {
-        '&:hover': {
-            textDecoration: 'underline'
-        },
-        color: theme.palette.primary.main,
-        textDecoration: 'none'
+    blueText: {
+        color: theme.palette.common.blue.primary
+    },
+    boldText: {
+        fontWeight: 'bold'
+    },
+    greenText: {
+        color: theme.palette.common.green.primary
+    },
+    whiteText: {
+        color: theme.palette.common.white
     }
 });
 
@@ -46,9 +52,5 @@ export default (theme) => ({
  * Common dimensions
  */
 export const dimensions = {
-    FOOTER_HEIGHT: 40,
-    MAIN_MENU_WIDTH: 70,
-    MAIN_MENU_WIDTH_COLLAPSED: 70,
-    MAIN_SUBMENU_WIDTH: 330,
-    TOP_BAR_HEIGHT: 64
+    TOP_BAR_HEIGHT: 88
 };

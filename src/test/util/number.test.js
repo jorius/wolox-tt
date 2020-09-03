@@ -1,12 +1,5 @@
 // @scripts
-import { round, toMoney } from '../../util';
-
-test('round', () => {
-    const number = 1.539;
-    const result = round(number, 2);
-    const expected = 1.54;
-    expect(result).toEqual(expected);
-});
+import { toMoney } from '../../util';
 
 describe('toMoney', () => {
     test('toMoney (2 decimals)', () => {

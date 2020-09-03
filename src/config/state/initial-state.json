@@ -4,10 +4,6 @@
     "isVisible": false,
     "msg": null
   },
-  "mainMenu": {
-    "expandedItems": [],
-    "isExpanded": false
-  },
   "modalDialog": {
     "cancelLabel": null,
     "customActions": null,
@@ -23,7 +19,8 @@
   },
   "techCollection": {
     "items": [],
-    "totalCount": null
+    "sortDirection": "default",
+    "totalCount": 0
   },
   "toastNotification": {
     "isVisible": false,

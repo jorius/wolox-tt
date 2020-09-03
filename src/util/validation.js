@@ -26,16 +26,6 @@ export const isAllPropsValid = (obj) =>
     });
 
 /**
- * Validates whether a value is in a range.
- * @param {Object} value - The value to be checked.
- * @param {Object} min - Min value.
- * @param {Object} max - Max value.
- * @returns {boolean}
- */
-export const isBetween = (value, min, max) =>
-    value >= min && value <= max;
-
-/**
  * Validates whether a string is a valid number.
  * @param {string} text - The string to be validated.
  * @param {number} decimals - The max allowed decimals.
