@@ -122,7 +122,7 @@ Open the `globals.json` file located in `src/config/settings` and toggle the pro
 }
 ```
 
-## Responsive andsupport
+## Responsive and support
 
 | Screen / Component       | Supported          |
 |-                         |:-:                 |
