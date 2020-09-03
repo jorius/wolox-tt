@@ -16,5 +16,9 @@
     "**/build": true,
     "**/coverage": true,
     "**/node_modules": true
-   }
+  },
+  "appService.zipIgnorePattern": [
+    "node_modules{,/**}",
+    ".vscode{,/**}"
+  ]
 }
