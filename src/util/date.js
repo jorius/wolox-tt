@@ -20,30 +20,6 @@ export const toShortDateString = (date) =>
     moment(date).format('L');
 
 /**
- * Gets a short time representation of the given date.
- * @param {Date} date
- * @returns {string}
- */
-export const toShortTimeString = (date) =>
-    moment(date).format('HH:mm:ss');
-
-/**
- * Gets a short date-time representation of the given date.
- * @param {Date} date
- * @returns {string}
- * */
-export const toShortDateTimeString = (date) =>
-    moment(date).format('L h:mm:ss a');
-
-/**
- * Gets a long date-time representation of the given date.
- * @param {Date} date
- * @returns {string}
- * */
-export const toLongDateTimeString = (date) =>
-    moment(date).format('LLLL');
-
-/**
  * Removes the time part of the given date.
  * @param {Date} date
  * @returns {Date}

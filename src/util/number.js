@@ -2,15 +2,6 @@
 import numeral from 'numeral';
 
 /**
- * Rounds a number with the passed-in decimals.
- * @param {number} number - The number to be rounded.
- * @param {number} decimals - The number of decimals.
- * @returns {number}
- */
-export const round = (number, decimals) =>
-    Math.round(number * (10 ** decimals)) / (10 ** decimals);
-
-/**
  * Gets a money representation of the passed-in number.
  * @param {string} currencyChar - The currency symbol. E.g.: "$".
  * @param {number} decimals - The number of decimals.
