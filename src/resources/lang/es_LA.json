@@ -1,7 +1,7 @@
 {
   "appName": "Wolox",
   "common": {
-    "errorBoundary": "Algo salió mal, porfavor intenta de nuevo.",
+    "errorBoundary": "Algo salió mal, por favor intenta de nuevo.",
     "in": " en "
   },
   "homePage": {

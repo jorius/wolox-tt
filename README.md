@@ -148,7 +148,7 @@ To check these implementations go to `src/pages/master-page` and review the foll
 |-                         |-                                  |
 | component-mapper.js      | React.Lazy                        |
 | routes.js                | React.Suspense and error boundary |
-| error-boundary.js        | Error boundary |
+| error-boundary.js        | Error boundary                    |
 
 <br />
 
