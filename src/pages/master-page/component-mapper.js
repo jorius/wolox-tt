@@ -1,9 +1,11 @@
+import { lazy } from 'react';
+
 // @scripts
-import HomePageContainer from '../../containers/home-page';
-import LandingPageContainer from '../../containers/landing-page';
-import LoginPageContainer from '../../containers/login-page';
-import NotFoundPageContainer from '../../containers/not-found-page';
-import SettingsPageContainer from '../../containers/settings-page';
+const HomePageContainer = lazy(() => import('../../containers/home-page'));
+const LandingPageContainer = lazy(() => import('../../containers/landing-page'));
+const LoginPageContainer = lazy(() => import('../../containers/login-page'));
+const NotFoundPageContainer = lazy(() => import('../../containers/not-found-page'));
+const SettingsPageContainer = lazy(() => import('../../containers/settings-page'));
 
 // @constants
 const components = {

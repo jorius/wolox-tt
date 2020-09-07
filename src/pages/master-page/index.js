@@ -29,6 +29,7 @@ const MasterPage = ({
             <title>{title}</title>
         </Helmet>
         <CtrlRoutes
+            loadingPageProps={loadingPageProps}
             userProps={userProps}
         />
         <CtrlCommonControls

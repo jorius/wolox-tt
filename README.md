@@ -14,21 +14,22 @@
 5. [How to run locally](#how-to-run-locally)
 6. [Switch between mock services and real services](#switch-between-mock-services-and-real-services)
 7. [Responsive support](#response-support)
-8. [Criteria acceptance](#criteria-acceptance)
-9. [Optional criteria acceptance](#criteria-acceptance)
+8. [React.Lazy, React.Suspense and error boundary implementation](#react.lazy,-react.suspense-and-error-boundary-implementation)
+9. [Criteria acceptance](#criteria-acceptance)
+10. [Optional criteria acceptance](#criteria-acceptance)
 
 ## Scope completed
 The following scope completed values are based on a simple average formula using the criteria acceptance items.
 
 ### **Criteria acceptance**
 Total criteria acceptance items: **27** <br />
-Total criteria acceptance items completed so far: **24** <br/>
-Criteria acceptance completed so far: **88%**
+Total criteria acceptance items completed so far: **25** <br/>
+Criteria acceptance completed so far: **92.5%**
 
 ### **Optional criteria acceptance**
 Total criteria acceptance items: **8** <br />
-Total criteria acceptance items completed so far: **6** <br/>
-Criteria acceptance completed so far: **75%**
+Total criteria acceptance items completed so far: **7** <br/>
+Criteria acceptance completed so far: **87.5%**
 
 ## Prerequisites
 
@@ -139,6 +140,18 @@ Open the `globals.json` file located in `src/config/settings` and toggle the pro
 
 <br />
 
+## React.Lazy, React.Suspense and error boundary implementation
+
+To check these implementations go to `src/pages/master-page` and review the following files:
+
+| File                     | Implementation                    |
+|-                         |-                                  |
+| component-mapper.js      | React.Lazy                        |
+| routes.js                | React.Suspense and error boundary |
+| error-boundary.js        | Error boundary                    |
+
+<br />
+
 ## Criteria acceptance
 ### General
 - [ ] Don't use libraries such as Bootstrap or related
@@ -170,7 +183,7 @@ Open the `globals.json` file located in `src/config/settings` and toggle the pro
 - [x] Implement a routing solution to flag routes with permissions
 - [x] Use a state management  such as redux, context, recoil, etc
 - [x] Implement component and data flow test with jest
-- [ ] Implement lazy loading with React.Lazy and React.Suspense
+- [x] Implement lazy loading with React.Lazy and React.Suspense
 - [x] Use react hooks
 
 
@@ -183,5 +196,5 @@ Open the `globals.json` file located in `src/config/settings` and toggle the pro
 - [x] Make the web "accessible”
 ### React
 - [x] Use i18n to handle language texts through the web app and add a button to switch between languages
-- [ ] Implement error boundary
+- [x] Implement error boundary
 - [x] Make deploy of the web app to a related production environment
