@@ -3,16 +3,18 @@ import Chip from '@material-ui/core/Chip';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
+import Hidden from '@material-ui/core/Hidden';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import PropTypes from 'prop-types';
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 
 // @scripts
+import CtrlTextField from '../../components/common/ctrl-text-field';
 import { config } from '../../config';
 import { format } from '../../util';
 
@@ -23,12 +25,27 @@ const HomePage = ({
     classes,
     onFilterTechCollection,
     onGetTechCollection,
+    onSortTechCollection,
     techCollectionItems,
+    techCollectionSortDirection,
     totalTechCollection
 }) => {
     useEffect(() => {
         onGetTechCollection();
     }, [onGetTechCollection]);
+
+    const [search, onSearchChange] = useState(null);
+
+    const handleOnClearFilter = () => {
+        onFilterTechCollection({});
+        onSortTechCollection(techCollectionSortDirection);
+        onSearchChange(null);
+    };
+
+    const handleOnFieldChange = ({ value }) => {
+        onSearchChange(value);
+        onFilterTechCollection({ keywords: value });
+    };
 
     const renderTechItemTags = (langs, type) => {
         const tags = [...langs.split(','), type];
@@ -117,6 +134,23 @@ const HomePage = ({
     return (
         <div id="home-page" className={classes.homePage}>
             <Grid container direction="column">
+                <Hidden lgUp mdUp>
+                    <Grid item>
+                        <CtrlTextField
+                            className={classes.searchTextField}
+                            icon="close"
+                            id="search"
+                            label={config.text.homePage.search}
+                            name="search"
+                            onChange={handleOnFieldChange}
+                            onIconClick={handleOnClearFilter}
+                            placeholder={config.text.homePage.search}
+                            type="text"
+                            variant="outlined"
+                            value={search}
+                        />
+                    </Grid>
+                </Hidden>
                 <Grid item>
                     <Grid container direction="row" justify="flex-start">
                         <Grid className={classes.totalCount} item>
@@ -145,6 +179,8 @@ HomePage.propTypes = {
     classes: PropTypes.object.isRequired,
     onFilterTechCollection: PropTypes.func.isRequired,
     onGetTechCollection: PropTypes.func.isRequired,
+    onSortTechCollection: PropTypes.func.isRequired,
+    techCollectionSortDirection: PropTypes.string.isRequired,
     techCollectionItems: PropTypes.arrayOf(PropTypes.shape({
         author: PropTypes.string.isRequired,
         flagged: PropTypes.bool,
