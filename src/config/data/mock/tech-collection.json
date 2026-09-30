@@ -43,7 +43,7 @@
       "license": "Proprietary",
       "language": "Swift, Objective-C",
       "type": "Mobile",
-      "logo": "https://eos-gnss.com/wp-content/uploads/2018/04/iOS.png"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/6/63/IOS_wordmark_%282017%29.svg"
     },
     {
       "tech": "Android",
@@ -52,7 +52,7 @@
       "license": "Apache",
       "language": "Java, Kotlin",
       "type": "Mobile",
-      "logo": "https://1000marcas.net/wp-content/uploads/2020/01/Android-logo.png"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg"
     },
     {
       "tech": "Angular",
