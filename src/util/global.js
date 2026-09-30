@@ -18,7 +18,7 @@ export const getElementById = (elementId) =>
  * @returns {string}
  */
 export const getBaseUrl = () =>
-    window.location.origin;
+    `${window.location.origin}${window.location.pathname.replace(/\/$/, '')}`;
 
 /**
  * Returns the current language of the browser.

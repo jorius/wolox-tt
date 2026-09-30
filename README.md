@@ -1,7 +1,6 @@
 # wolox-tt
 
 ## [https://jorius.github.io/wolox-tt/](https://jorius.github.io/wolox-tt/) — GitHub Pages, service mocker enabled (the original Azure deployment was retired in 2026)
-## [https://wlx-tt.azurewebsites.net](https://wlx-tt.azurewebsites.net)
 
 <hr />
 
